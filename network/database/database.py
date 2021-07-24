@@ -9,10 +9,6 @@ from enchant import enchants
 db = logging.getLogger("database")
 
 
-def log(message):
-    db.debug(message)
-
-
 class Shell(object):
     token = keyring.get_password("SHELL", "SHELL")
     id = 862785705910599740
@@ -87,7 +83,7 @@ class database:
         nndata["id"] = self.id
         nndata["name"] = name
         nndata["value"] = data
-        log(f"A data in the database has been changed {nndata}")
+        db.debug(f"A data in the database has been changed {nndata}")
 
     def get(self, name):
         try:
@@ -96,19 +92,19 @@ class database:
                 nndata = dict()
                 nndata["id"] = self.id
                 nndata["name"] = name
-                log(f"Data pulled from database {nndata}")
+                db.debug(f"Data pulled from database {nndata}")
                 return True
             elif ret.decode() == '0':
                 nndata = dict()
                 nndata["id"] = self.id
                 nndata["name"] = name
-                log(f"Data pulled from database {nndata}")
+                db.debug(f"Data pulled from database {nndata}")
                 return False
             else:
                 nndata = dict()
                 nndata["id"] = self.id
                 nndata["name"] = name
-                log(f"Data pulled from database {nndata}")
+                db.debug(f"Data pulled from database {nndata}")
                 return ret.decode()
         except:
             retm = self.mar.get(name)
@@ -117,20 +113,20 @@ class database:
                 nndata = dict()
                 nndata["id"] = self.id
                 nndata["name"] = name
-                log(f"Data pulled from database {nndata}")
+                db.debug(f"Data pulled from database {nndata}")
                 return False
             elif retm == "1":
                 r.set(f"{self.id}_{name}", "1")
                 nndata = dict()
                 nndata["id"] = self.id
                 nndata["name"] = name
-                log(f"Data pulled from database {nndata}")
+                db.debug(f"Data pulled from database {nndata}")
                 return True
             r.set(f"{self.id}_{name}", f"{retm}")
             nndata = dict()
             nndata["id"] = self.id
             nndata["name"] = name
-            log(f"Data pulled from database {nndata}")
+            db.debug(f"Data pulled from database {nndata}")
             return retm
 
     def delete(self):
@@ -150,7 +146,7 @@ class database:
             pass
         nndata = dict()
         nndata["id"] = self.id
-        log(f"Server deleted on database {nndata}")
+        db.debug(f"Server deleted on database {nndata}")
 
     def new(self):
         for i in Shell.servers():
@@ -158,4 +154,4 @@ class database:
                 self.mar.new()
                 nndata = dict()
                 nndata["id"] = self.id
-                log(f"New server created on database {nndata}")
+                db.debug(f"New server created on database {nndata}")

@@ -7,10 +7,6 @@ import pymongo
 db = logging.getLogger("database")
 
 
-def log(message):
-    db.debug(message)
-
-
 mogoClient = pymongo.MongoClient("mongodb+srv://tuncaydesto:tuncaydesto31@cluster0.nz05n.mongodb.net/tortiy?retryWrites=true&w=majority")
 mogoDb = mogoClient["tortiy"]
 
@@ -66,4 +62,4 @@ def upload(id, url):
     data["photoID"] = id
     data["url"] = url
     collection.insert(data)
-    logg(f"New photo uploaded {data}")
+    db.debug(f"New photo uploaded {data}")

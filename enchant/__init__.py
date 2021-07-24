@@ -12,7 +12,7 @@ from network.database import *
 
 logger = logging.getLogger('discord')
 logger.setLevel(logging.DEBUG)
-handler = logging.FileHandler(filename='/home/fezciberk/valve/shell/logs/discord.log', encoding='utf-8',
+handler = logging.FileHandler(filename='../logs/discord.log', encoding='utf-8',
                               mode='w')
 handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(threadName)s - %(name)s: %(message)s'))
 logger.addHandler(handler)
@@ -20,7 +20,7 @@ logger.addHandler(handler)
 loggerSh = logging.getLogger("shmoke")
 logging.addLevelName(4242, "SHMOKE")
 loggerSh.setLevel(4242)
-handlerSh = logging.FileHandler(filename='/home/fezciberk/valve/shell/logs/shmoke.log', encoding='utf-8',
+handlerSh = logging.FileHandler(filename='../logs/shmoke.log', encoding='utf-8',
                                 mode='w')
 handlerSh.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(threadName)s - %(name)s: %(message)s'))
 loggerSh.addHandler(handlerSh)
@@ -42,7 +42,7 @@ class Shell(object):
 class Chacontext(commands.Context):
     async def bug(self, value):
         try:
-            with open("/home/fezciberk/valve/shell/logs/bugs.txt", "a") as fl:
+            with open("../logs/bugs.txt", "a") as fl:
                 fl.write(f"An bug was found by {self.message.author}: {value}\n")
             await self.message.add_reaction("<:bughunter:853071857556914177>")
         except discord.HTTPException:
@@ -56,7 +56,7 @@ class Changing(commands.Bot):
         enchants.bot = self
 
     def loadCogs(self):
-        for filename in os.listdir(f'/home/fezciberk/valve/shell/cogs'):
+        for filename in os.listdir(f'../cogs'):
             if filename.endswith('.py'):
                 self.load_extension(f'cogs.{filename[:-3]}')
             elif filename == "__pycache__":

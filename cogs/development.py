@@ -22,7 +22,7 @@ class Development(commands.Cog):
     @commands.command()
     @commands.is_owner()
     async def reloadcogs(self, ctx: commands.Context):
-        for filename in os.listdir(f'/home/fezciberk/valve/shell/cogs'):
+        for filename in os.listdir(f'../cogs'):
             if filename.endswith('.py'):
                 self.bot.reload_extension(f'cogs.{filename[:-3]}')
             elif filename == "__pycache__":

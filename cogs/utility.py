@@ -75,7 +75,7 @@ class Utility(commands.Cog):
         prefix = enchant.get_prefix()
         if data:
             await ctx.author.send(
-                file=discord.File(f'/home/fezciberk/valve/shell/data/{ctx.guild.id}_messages.txt'))
+                file=discord.File(f'../data/{ctx.guild.id}_messages.txt'))
         else:
             await ctx.reply("```"
                             "Message logging is not enabled for your server.\n"

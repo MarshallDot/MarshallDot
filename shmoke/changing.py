@@ -27,6 +27,7 @@ class Shell(object):
 
 def marsun() -> enchant.Changing:
     loop = asyncio.new_event_loop()
+    database.logger()
     shell = enchant.Changing(command_prefix=enchant.get_prefix, case_insensitive=True, intents=discord.Intents.all(), loop=loop)
 
     shell.config(Shell.token)
@@ -39,7 +40,6 @@ def marshall():
     loop = asyncio.new_event_loop()
     loop.add_signal_handler(signal.SIGINT, lambda: loop.stop())
     loop.add_signal_handler(signal.SIGTERM, lambda: loop.stop())
-    debu = loop.create_task(database.logger())
     task = loop.create_task(marsun())
     loop.run_forever()
 

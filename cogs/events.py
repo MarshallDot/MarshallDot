@@ -42,14 +42,14 @@ class events(commands.Cog):
                     else:
                         self.later_messageId = str(payload.message_id)
                     message = ""
-                    with open(f'/home/fezciberk/valve/shell/data/{payload.guild_id}_messages.txt', "r") as fl:
+                    with open(f'../data/{payload.guild_id}_messages.txt', "r") as fl:
                         lines = fl.readlines()
                         for i in lines:
                             if i.endswith(f"{payload.message_id}\n"):
                                 pure_message = i.split(f" | message ID: {payload.message_id}\n")
                                 pure_message = pure_message[0].split("```")
                                 message += f"{pure_message[0]}\n"
-                    with open(f'/home/fezciberk/valve/shell/data/{payload.guild_id}_messages.txt', "r") as fl:
+                    with open(f'../data/{payload.guild_id}_messages.txt', "r") as fl:
                         lines = fl.readlines()
                         for i in lines:
                             if i.endswith(f"{payload.message_id}\n"):
@@ -91,7 +91,7 @@ class events(commands.Cog):
                     else:
                         self.later_messageIds = str(payload.message_ids)
                     message = ""
-                    with open(f'/home/fezciberk/valve/shell/data/{payload.guild_id}_messages.txt', "r") as fl:
+                    with open(f'../data/{payload.guild_id}_messages.txt', "r") as fl:
                         lines = fl.readlines()
                         for i in lines:
                             for id in payload.message_ids:
@@ -134,7 +134,7 @@ class events(commands.Cog):
                 utc = f'{utc.strftime("%Y-%m-%d")} {utc.strftime("%I:%M:%S")}'
                 db = enchant.database(message.guild.id)
                 if db.get("message_log"):
-                    with open(f'/home/fezciberk/valve/shell/data/{message.guild.id}_messages.txt', "a") as fl:
+                    with open(f'../data/{message.guild.id}_messages.txt', "a") as fl:
                         fl.write(f'[{utc} UTC] {message.author}: {message.content} | message ID: {message.id}\n')
                 if db.get("profanity_filter"):
                     if message.author.guild_permissions.kick_members:

@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/Object_C.dir/main.cpp.o -o Object_C 

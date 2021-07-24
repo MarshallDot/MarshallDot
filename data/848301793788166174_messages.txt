@@ -1,0 +1,2 @@
+titannzilla#5813: *configuration all message-log on
+titannzilla#5813: *configuration all profanity-filter on

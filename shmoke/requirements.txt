@@ -1,0 +1,17 @@
+redis
+mariadb
+Discord-Anti-Spam
+discord.py
+requests
+PyNaCl
+pynput
+python-dotenv
+gevent
+colorama
+bs4
+keyring
+profanity-filter
+python-Levenshtein
+tweepy
+pymongo
+dnspython

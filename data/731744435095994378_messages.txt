@@ -1,0 +1,1240 @@
+Delight#1337: *message-log
+Desto2000#0423: prefix i dğeiştirdin
+Delight#1337: cool
+Desto2000#0423: oldu
+Desto2000#0423: *get-message-log ta txt dosyasını atar
+Delight#1337: biraz zaman geçsin de söyleyeyim
+Desto2000#0423: bana yetkin yok dedi
+Desto2000#0423: küstüm botuma
+Delight#1337: sadg
+Delight#1337: ben yapdg'yi ekliyim
+Desto2000#0423: bu arada message log a kimler erişebilsin şu an sunucu yöneticileri erişebiliyor
+Delight#1337: sadece ben
+Desto2000#0423: o zaman böyle kalıcak
+Desto2000#0423: yakın zamanda custom ban message felan gelicek
+Desto2000#0423: ban ve kick komutu gelicek
+Delight#1337: bak o custom ban message
+Delight#1337: çok güzel olur
+Delight#1337: kullanırım ben
+Desto2000#0423: hattaha bu gün başlıyayım
+Desto2000#0423: onlara
+Desto2000#0423: bu gün botta kesinti olabilir çok elleşmeyin
+Delight#1337: tamam
+Delight#1337: <@!127296623779774464> remind 10 days sunucuyu silme
+Desto2000#0423: database de değişiklik olucak çünki
+Delight#1337: https://www.reddit.com/r/testsequels/
+Desto2000#0423: dm mesajı olsunmu ban komutunda
+Delight#1337: olmasın
+Desto2000#0423: yok komutla açabilicen
+Delight#1337: banlandığı zaman adam onun DMsine mesaj gitmesin yani de mi
+Delight#1337: öyle mi
+Desto2000#0423: *configiration ban message dm
+Desto2000#0423: böyle olucak
+Desto2000#0423: kapalıysa açıucak
+Delight#1337: ha tamam o zaman
+Desto2000#0423: conf komutu güzel olur demi
+Delight#1337: olur bence
+Desto2000#0423: *configuration command type func
+Desto2000#0423: gibi
+Desto2000#0423: komutun bi değerini değiştir gibisinden
+Desto2000#0423: sadece *configuration yazarsan configlerini atıcak server ın
+Desto2000#0423: bu arada bot birden fazla sunucuda kullanılınca aşırı hızlı olucak
+Desto2000#0423: şu an bile üst üste komut kullanınca hızlı oluyor
+Desto2000#0423: belleğe alıyor değerleri
+Desto2000#0423: bir süreliğine
+Delight#1337: cool
+Desto2000#0423: şimdi database e yeni değerleri ekledim
+Desto2000#0423: aa dur dm message ı unuttum
+Desto2000#0423: datbase ana baba yeri gibi
+Desto2000#0423: profanity filter yakalanan küfürleri bellekte tutuyor böylelikle hep aynı küfürü spam yapanlar gg oluyor (türkçe desteği bulunmamakta)
+Delight#1337: bak bu iyimiş
+! . 02 . !#9502: https://tenor.com/view/real-gif-4390178
+Desto2000#0423: şimdi database e yeni değişkenler eklendi
+Delight#1337: <:thepain:608649150762057758>
+Desto2000#0423: utku özele baksana
+Delight#1337: https://media.discordapp.net/attachments/752991040067076178/842619425776861214/image.png?width=338&height=479
+Delight#1337: hala daha çok üye gerekiyor
+Delight#1337: bir de uyarı işlemlerini yapgd ile yapıcağım ben
+Desto2000#0423: yapgd nin warning ini hiç denemedim
+Delight#1337: -warn <@!608659142332383235> deneyelim
+Delight#1337: <:animePensive:834781271552294983>
+Desto2000#0423: aslında utku sen bana bu bi komutun en güzel olduğu botu söyle
+Desto2000#0423: özelliklerini öyle
+Desto2000#0423: shelll- de öyle yapalım
+Delight#1337: düşünelim
+Delight#1337: ban sistemi için pollr'ı kullan
+Delight#1337: mesela birine ban attığımda benim ban mesajım otomatik silinsin
+Delight#1337: sonrasında da kullanıcı adı ve etiketi ile bent. yazsın
+Desto2000#0423: sen mesela ban komutu en iyi şu botta o botta o komutun farkını felan söyle
+Delight#1337: sonrasında neler vardı
+Delight#1337: farkı şöyle
+Desto2000#0423: okay
+Delight#1337: daha hızlı hem
+Delight#1337: discord apiye gir
+Delight#1337: pollr yaz
+Delight#1337: sonra da bak
+Desto2000#0423: sunucu olanmı
+Delight#1337: evet
+Delight#1337: -warn <@!608659142332383235> deneyelim
+Delight#1337: <:WHATTHEFUCKISRIGHTWITHYOU:834553666282455040>
+Desto2000#0423: allah allah bulmadım pollr help felan yazdımda
+Delight#1337: pollr help'i yok
+Delight#1337: direkt pollr yaz
+Delight#1337: #0108 etiketi ile olan
+Delight#1337: temp.gg
+Desto2000#0423: ok
+Delight#1337: 1 + 600
+Desto2000#0423: yazdımda cevap yok bottan
+Delight#1337: <a:SUPERHARDPEE:618220116282310667>
+Delight#1337: o botun komut listesi yok
+Desto2000#0423: ha
+Delight#1337: komutu da yok
+Delight#1337: prefixi de yok
+Delight#1337: sadece bak
+Delight#1337: bent kısmına bak
+Desto2000#0423: ha
+Delight#1337: 
+Delight#1337: ve büyük ihtimal ban işlemleri
+Delight#1337: prefix ve komut yazılarak olmuyor
+Delight#1337: başka bir kanal da banlıyorlar
+Desto2000#0423: ebesininki be
+Desto2000#0423: o kadar da karmaşık yapmayın be
+Delight#1337: güzel olmasını istiyorsan yap oğlum
+Desto2000#0423: sistemi bilmiyoruz ki
+Delight#1337: elinde bilinen birkaç nokta var açıkcası
+Delight#1337: denemek istiyorsan denemelisin
+Desto2000#0423: şimdi ban komutu kullanıldığında komutun kullanıldığı mesjaı silsinmi
+Delight#1337: evet
+Desto2000#0423: tamamdır
+Desto2000#0423: kimin banladığı hakkında bir bilgi yazsınmı mesaj da buraya atılan mesajda veya adam giden mesajda
+Delight#1337: sunucu'nun <#849593622750953512> profili
+Delight#1337: yazmasın
+Delight#1337: bent desin geçsin
+Desto2000#0423: tamamdır
+Delight#1337: kimin banladığı belli zaten
+Desto2000#0423: şu an şeyi düşünüyorum
+Desto2000#0423: dm mesajı açıksa dm ye gidicek mesajı özelliştirme olsunmu
+Desto2000#0423: ya da burasıyla aynımı olsun
+Desto2000#0423: ya da değiştirilemesinmi dm ye giden mesaj
+Delight#1337: dm'ye yollarsa ban appeal filan yollaması icin
+Delight#1337: ama discord'un ban appeal sistemi var artık
+Delight#1337: istiyorsan ekle
+Desto2000#0423: ban appeal ney ki
+Delight#1337: https://images-ext-2.discordapp.net/external/Qvx5U-U6Oy74R8u4X3S590lxfWi963vAmIoIVlHFg5A/https/i.imgur.com/Hun3Fu6.jpg?width=366&height=480
+Delight#1337: banının acılması icin istek atma formu
+Desto2000#0423: ha
+Desto2000#0423: o zaman dm mesajı iptal
+Desto2000#0423: ```
+Delight#1337 got bent!
+```
+Desto2000#0423: default mesaj bu
+Delight#1337: cool
+Delight#1337: http://i.imgur.com/Nm0sibb.jpg
+Desto2000#0423: şimdi ban mesajı bitti
+Delight#1337: <:thepain:608649150762057758>
+Desto2000#0423: ay mesaj demişim
+Desto2000#0423: komutu
+Desto2000#0423: şimdi configuration komutu ve kick komutu var bota restart yapacam bi test et
+Desto2000#0423: bir sürü kişi var at rastgele
+Delight#1337: bak bak
+Delight#1337: elimi incittim kasarken
+Delight#1337: bota yaparız allah allah
+Delight#1337: *kick <@!254387001556598785>
+Desto2000#0423: ```
+*ban member reason
+```
+Delight#1337: *ban <@!254387001556598785> bm
+Desto2000#0423: missing perm dedi
+Delight#1337: iyi çalışıyor o zaman
+Desto2000#0423: mesajı sildi
+Delight#1337: bence iyi yani
+Desto2000#0423: birşey diycem
+Delight#1337: de bakalım
+Desto2000#0423: botun yetkisinden banlayamamış olabilirmi
+Delight#1337: ben bilerek yaptım zaten
+Delight#1337: o bot en üstte rol olarak
+Desto2000#0423: ha tamam
+Delight#1337: <:21Ass:544302830639382539>
+Desto2000#0423: bende kod ta hata var sandım
+Delight#1337: ay
+Delight#1337: yanlıs emoji <:flushedb:594955877199642652>
+Desto2000#0423: o emoji tehlikeli
+Desto2000#0423: onaylanan sunucu alacaz bak
+Desto2000#0423: dikat et
+Delight#1337: partner benim işime gelir verified ise sunucu için
+Delight#1337: o yüzden verified yaptım da
+Delight#1337: kabul olmaz
+Desto2000#0423: partner o zaman 🙂
+Delight#1337: partner almamız çok zor
+Desto2000#0423: şeytan diyorki komutu kullanan sensen perm sormasın ahahha
+Desto2000#0423: şaka şaka
+Desto2000#0423: öyle birşey yapamam zaten
+Delight#1337: yine kullanamaz ki
+Delight#1337: discord api niye var 😎
+Desto2000#0423: yok ben bile olsam check i kaldıramıyorum
+Delight#1337: horny jail'e düştüm
+Delight#1337: kanala foto atıcam diye
+Delight#1337: dimdick oldu
+Desto2000#0423: ahaha
+Desto2000#0423: ama istesem kendi check imi felan yapmayı deneyip birşeyler yaparım
+Desto2000#0423: utku shell i sunuculara eklemek için olan formu yayabilirmiyiz
+Delight#1337: dene yahu
+Delight#1337: formu
+Delight#1337: derken
+Desto2000#0423: e olum perm im olmayan sunucuda ban komutu kullamak olurmu
+Desto2000#0423: shell e özelden (form yaz
+Delight#1337: form mu
+Delight#1337: nasıl form lan
+Desto2000#0423: bayaha git dene bak
+Delight#1337: valla anlamadım
+Delight#1337: nasıl ya
+Delight#1337: anlamadım val
+Desto2000#0423: sunucuna shell i eklemek için başvuru formu doldurman laızm
+Desto2000#0423: anladınmı
+Desto2000#0423: onu nasıl yayabiliriz
+Delight#1337: discord.bots.gg kullanman lazım
+Delight#1337: top.gg kabul etmez
+Delight#1337: discord.bots.gg'de özel botlara yer veriliyor
+Desto2000#0423: tamam botu 7/24 yapınca bakalım
+Delight#1337: söylersen orada yayarsın
+Desto2000#0423: form için uğraştım bir bak
+Desto2000#0423: benim botun bi ban mesajını deniyeyim çalışıyormu diye
+Desto2000#0423: (burda değil)
+Delight#1337: <a:wherethepussiesat:836412060387770412>
+Desto2000#0423: 
+Desto2000#0423: tam olmamış
+Delight#1337: not good
+Delight#1337: delet \```
+Delight#1337: pls delet
+Delight#1337: ben çok fazla süreden beridir bilgisayardayım
+Delight#1337: biraz gidip dinleneyim
+Delight#1337: görüşmek üzere
+Egehanss#0001: @shell
+Desto2000#0423: <@!844305928227913739>
+Delight#1337: geldim
+Delight#1337: pls vote "osu mu oynayayım sunucu ile mi ilgileneyim?"
+Delight#1337: osu <:suggester_check:704665656573952040> 
+sunucu ❌
+aphilia#1715: Merhaba.
+Delight#1337: welcome <:AiriWelcome:738286763377688648>
+Delight#1337: merhaba
+Delight#1337: welcome to my test server
+aphilia#1715: Teşekkür ederim.
+Delight#1337: <a:umarupartyhard:443956522691854336>
+Delight#1337: 1092 + 1080
+Delight#1337: 2172/5
+Delight#1337: 434/40
+Delight#1337: hmm
+aphilia#1715: Uu, güzel bot.
+Delight#1337: quick math
+aphilia#1715: :)
+Delight#1337: <a:crabrave:565234688889978883>
+aphilia#1715: Epey üye varmış.
+Delight#1337: evet
+Delight#1337: 4 gün de oldu
+aphilia#1715: Hoş...
+Delight#1337: o kadar yaptım bari hava atayım
+aphilia#1715: At at.
+aphilia#1715: Neyse, nasılsın?
+Delight#1337: iyiyim sen nasılsın
+Delight#1337: bir de sen 7 haziran da okula gidiyor musun
+aphilia#1715: İyiyim, teşekkür ederim.
+aphilia#1715: Evet, sanırım gideceğim.
+aphilia#1715: Ailem gitmemi istiyor.
+aphilia#1715: Sen gidecek misin?
+Delight#1337: yok
+Delight#1337: bizim sınıf sıkıcı
+aphilia#1715: Anladım.
+Delight#1337: +tag create ban https://media.discordapp.net/attachments/744545956434935878/849624080243490836/unknown.png?width=106&height=11
+Delight#1337: <:BrunoGun:632000882124259328>
+Delight#1337: +tag create davet https://discord.gg/jzSev8NezR
+Delight#1337: shut the fuck up
+Delight#1337: nasıl oluyor bu desto man
+Delight#1337: (configuration ban message {member} got bent.
+Desto2000#0423: attım sana
+Delight#1337: cooler
+Desto2000#0423: prefix i değiştir
+Delight#1337: 🆒
+Delight#1337: fuck man
+Desto2000#0423: sende *
+Delight#1337: *configuration ban message {member} got bent
+Delight#1337: *configuration ban message {member} got bent.
+Delight#1337: heh
+Delight#1337: nokta önenmli
+Delight#1337: discord mesaj düzeltme şeysi niye bu kadar yavaş
+Desto2000#0423: birde üst üste komut kullanırsan hızlanıyor bot
+Delight#1337: https://tenor.com/view/shock-disbelief-stunned-mr-bean-gif-9553766
+Desto2000#0423: bir süreliğine fakat
+Delight#1337: <a:hyperkanna:610512597636087878>
+Desto2000#0423: birini banlayınca artık bu mesaj gözükücek
+Delight#1337: spedo bredo
+Delight#1337: ben bu bot ile insanları banlıyıcağım
+Delight#1337: <a:gachiCOOL:416903749781422080>
+Desto2000#0423: bu arada pollr daki gibi bolt yapabiliyorsun ama
+Desto2000#0423: senin prefix te hata çıkartır
+Delight#1337: herkes kendine göre ayarlasın kardeşim.
+Delight#1337: *prefix am
+Desto2000#0423: artık öyle değil
+Delight#1337: amban 😎
+Delight#1337: fuck man fuck
+Delight#1337: <a:FuckManFuck:594509871747956736>
+Desto2000#0423: *configuration all prefix am
+Desto2000#0423: böyle yap
+Delight#1337: *configuration all prefix am
+Delight#1337: <:turtlecool:821795965862281226>
+Delight#1337: kim ban ister?
+Desto2000#0423: sevmediğin bir botu banla mesela
+Delight#1337: var mı ki
+Delight#1337: sunucu da discord.net botu var bru man
+Delight#1337: kullanmıyıcağız atak bari
+Delight#1337: amban <@!274366085011079169> goodbye my friendo..
+Desto2000#0423: rolünü al önce onun
+Delight#1337: sadg
+Delight#1337: şimdi aperture de ..
+Desto2000#0423: anasını hoplattın
+Delight#1337: amban 330770985450078208
+Desto2000#0423: bu arada ban mesajını burdan değiştirebiliyorum
+Delight#1337: sad ma man..
+Delight#1337: iyi bir arkadaş idi kendisi
+Desto2000#0423: ama çok mesajımızı sildi
+Desto2000#0423: yavşak
+Delight#1337: doğru
+Delight#1337: aaa hepboat için başvuru yapabiliyoruz
+Delight#1337: yapalım mı?
+Desto2000#0423: hepboat ney lan
+Delight#1337: zira'nın geliştiricisi'nin gizli botu
+Desto2000#0423: sen bilirsin
+Delight#1337: <@!127296623779774464> remind 1 day hepboat için başvuru yap
+Delight#1337: <:BlobLove:471869746002788362>
+Desto2000#0423: zira yı hiç sevmem
+Delight#1337: ben de
+Desto2000#0423: tasarımı öhhh
+Delight#1337: zeppelin'i kullanıcağım
+Delight#1337: reaction-role için
+Desto2000#0423: yakında zeppelin ide sikicek benim bot
+Delight#1337: ıh.
+Desto2000#0423: gizli planlarım var
+Delight#1337: <:pogDownLeft:712411215556509757>
+Desto2000#0423: tabi zeppelin onu sikmesse
+Delight#1337: bana ne lazım biliyor musun ağabey
+Delight#1337: her 1 saatte bir sunucu'nun profil fotoğrafını ve ismini değiştiren bir bot
+Desto2000#0423: öhhh
+Delight#1337: ve log'u buraya atıcak
+Delight#1337: liste yapıcağım bir tane mesela
+Delight#1337: 30 + 1
+Delight#1337: <:pogUpRight:712411215342600273>
+Desto2000#0423: mod log olayını ayrı bir seviyeye taşıyabilirim
+Delight#1337: am göt meme
+Desto2000#0423: zeppelin nasıl logluyorsa aynısını vb. yaparım
+Delight#1337: gacha time
+Delight#1337: bize 2 boost lazım
+Delight#1337: owo ile almam gerekicek
+Delight#1337: ama hiç owo oynayasım yok
+Desto2000#0423: bu arada bi zeppelin in nasıl log yaptığını biliyorsan şu an yapabilirim
+Delight#1337: bulayım
+Delight#1337: 
+Desto2000#0423: bu arada message log un conf unu komut yerine configuration komutuna mı geçirsem
+Desto2000#0423: çok iyiymiş lan
+Delight#1337: <a:blobPanic:762745152564363324>
+Desto2000#0423: şunu bana atsana burda çok mesaj atıyoruz
+Delight#1337: dm üzerinden mi
+Desto2000#0423: evet
+Desto2000#0423: forceban ney ki
+Desto2000#0423: ona bir bakayım
+Desto2000#0423: çok garipmiş
+Delight#1337: kalıcı ban
+Desto2000#0423: ha
+Delight#1337: discord.gg/code
+Delight#1337: mod log kanalına bak
+Desto2000#0423: ha ok
+Delight#1337: https://open.spotify.com/track/67BtfxlNbhBmCDR2L2l8qd?si=c29b433ebcad4e73
+Delight#1337: 2000 - 1082
+Desto2000#0423: tamamdır
+Delight#1337: 918 üye kasmama yardım edicek biri var mı <:pensivegard:700201515490476072>
+Desto2000#0423: ben şu zeppelin in komutlarına bakayım
+Delight#1337: bak bakalım
+Delight#1337: snowflake ekle lütfen <:YotsubaPray:700806124642762813>
+Desto2000#0423: onu nasıl yapacağımı bilmiyorum
+Delight#1337: search on github™️ <:github:836663839557681163>
+Desto2000#0423: bakarım
+Desto2000#0423: auto delet yapmayı denesemmi
+Delight#1337: 
+Delight#1337: 
+Delight#1337: 
+Delight#1337: 
+Delight#1337: 
+Delight#1337: sen bilirsin canım
+Desto2000#0423: gerçi o çok karmaşık
+Desto2000#0423: bu arada artık
+Desto2000#0423: herşeyi configuration dan değiştircren
+Delight#1337: <:thiwtf:665697814013149205>
+Desto2000#0423: amconfiguration profanity filter True
+Desto2000#0423: şunu yap 2 dk lığına
+Delight#1337: pls translate turkish profanity
+Delight#1337: asla
+Desto2000#0423: ahahha
+Desto2000#0423: amget-message-log
+Desto2000#0423: şunu yap
+Delight#1337: amget-message-log
+Delight#1337: verdi
+Delight#1337: vay amk
+Delight#1337: çok güzel lan
+Desto2000#0423: yaa
+Delight#1337: ben bunu info kanalı icin yapayım
+Desto2000#0423: bu arada tüm kanalları logluyor
+Delight#1337: ha
+Delight#1337: 😎
+Delight#1337: süper amk 😎
+Desto2000#0423: nsfw deki şeylerinde cdn linki var
+Delight#1337: woprkgwpokg
+Desto2000#0423: peki bilmiyorumda
+Delight#1337: 
+Desto2000#0423: dikkatli bak
+Desto2000#0423: orda
+Desto2000#0423: linkler var
+Delight#1337: 
+Delight#1337: am göt meme
+Delight#1337: <:AiriThumbUp:770091491204005938>
+Delight#1337: ya yine çok çıkmaya başladılar
+Delight#1337: cidden elim ağrıyor kasmaya mecalim kalmadı ne yapcaz
+Desto2000#0423: bilmiyorum
+Delight#1337: offff
+Desto2000#0423: boşver
+Desto2000#0423: oraya bot ayarla
+Delight#1337: botu çağlar akşam yaparım dedi
+Delight#1337: o zamana kadar indirmezsem olur
+Desto2000#0423: yeni favori botun hangisi ?
+Delight#1337: dyno
+Delight#1337: forever
+Desto2000#0423: dyno nun ben
+Desto2000#0423: bari zeppelin de 42 de
+Desto2000#0423: yanlız güzel sistem yaptım ha
+Delight#1337: dyno'nun güzel yanlarından birisi basit olması
+Delight#1337: basit olan her şey güzeldir
+Delight#1337: https://open.spotify.com/track/0b18g3G5spr4ZCkz7Y6Q0Q?si=115ff68c0cd849ab
+Delight#1337: ras ras ras putin
+Delight#1337: <a:neptune_dance:514125992537882668>
+Delight#1337: <a:AkariDance:411002182201245697>
+Delight#1337: <a:BitchDance:672962640829743116>
+Delight#1337: <a:CatDance2:744563025364910080>
+Delight#1337: <a:CatDance:744562340527210621>
+Delight#1337: <a:CatDance:513711468366004234>
+Delight#1337: ras ras putin
+Delight#1337: <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668>
+Delight#1337: 
+Delight#1337: arşivleme 1 ay, 24 saat gibi değiştirilebiliyor
+Delight#1337: <:josukeWTF:356798294107881473>
+Desto2000#0423: bu arada
+Desto2000#0423: get-message-log get-messages-log oldu
+Delight#1337: oki
+Delight#1337: <:THICC:361949497586221056>
+Desto2000#0423: artık sunucularını kolay arşivliyceksin
+Desto2000#0423: tabi bot 7/24 olursa 😄
+Delight#1337: o kolay oğlum
+Desto2000#0423: ağustosa kadar bekliyceğiz
+Delight#1337: sen benim dediğim ping sayfasını halletsen
+Delight#1337: <:angryeyes:812120376531615764>
+Desto2000#0423: onun için projeyi github a aktarıp ordan repl.it e felan aktarmam laızm yeni birşey yaptığımda
+Delight#1337: <:animePensive:834781271535910963>
+Desto2000#0423: aynı emojiden nasıl birden fazla atıyon wha
+Delight#1337: <:SunWithNerea:379003240496496640>
+Desto2000#0423: büyücü
+Delight#1337: kitchen sink'in destek sunucusuna bak
+Delight#1337: <:POGGERS:440658615880253440>
+Desto2000#0423: yuh
+Delight#1337: https://preview.redd.it/5r3f7bwblt271.jpg?width=640&format=pjpg&auto=webp&s=afce082f4bbc158d202343b22db8d323e0ae19eb
+Delight#1337: *
+Delight#1337: https://i.redd.it/8k875yvd2t271.jpg
+Delight#1337: opwrkgpowkr
+Desto2000#0423: ahahha
+Desto2000#0423: şuraya kendin için meme kanalı aç
+Desto2000#0423: gülelim
+Desto2000#0423: hahahah
+Desto2000#0423: ampost <#846394671222882334> deneme
+Desto2000#0423: gerçi yetkim yoktu
+Delight#1337: <:howiecry:834957852396486677>
+Delight#1337: ampost <#846394671222882334> deneme
+Desto2000#0423: allah allah
+Desto2000#0423: olmuyor
+Delight#1337: AM POSTALA BANA ABİ
+Desto2000#0423: ha
+Delight#1337: <:SadAngry:513711459742515202>
+Desto2000#0423: açıldı
+Delight#1337: ampost <#846394671222882334> deneme
+Delight#1337: bak bu güzel
+Delight#1337: ampost <#846394671222882334> utku'nun yarrağı leziz.
+Delight#1337: ne
+Delight#1337: diğer mesajları koymadı?
+Desto2000#0423: bekle
+Desto2000#0423: onu unuttum
+Desto2000#0423: açıldı
+Delight#1337: ampost <#846394671222882334> utku'nun yarrağı çok leziz.
+Delight#1337: man
+Delight#1337: rezil oldum
+Delight#1337: heh
+Delight#1337: adamsın shell
+Delight#1337: bunun icin yapmıstım <:peepoOtism:814392391376568350>
+Desto2000#0423: üst üste yazdır hızlansın
+Delight#1337: ampost <#846394671222882334> am
+Delight#1337: ampost <#846394671222882334> am
+Delight#1337: ampost <#846394671222882334> am
+Delight#1337: ampost <#846394671222882334> am
+Delight#1337: ampost <#846394671222882334> am
+Delight#1337: hızlan
+Delight#1337: bak güzel
+Desto2000#0423: birdaha yaz
+Delight#1337: ampost <#846394671222882334> am
+Delight#1337: ampost <#846394671222882334> am
+Delight#1337: ampost <#846394671222882334> am
+Delight#1337: ampost <#846394671222882334> am
+Delight#1337: ampost <#846394671222882334> am
+Delight#1337: ampost <#846394671222882334> am
+Delight#1337: hoa
+Delight#1337: vay amk
+Delight#1337: ampost <#846394671222882334> am
+Delight#1337: ampost <#846394671222882334> am
+Desto2000#0423: hızlandı
+Delight#1337: ampost <#846394671222882334> am
+Delight#1337: ampost <#846394671222882334> amampost <#846394671222882334> am
+Delight#1337: ampost <#846394671222882334> am
+Delight#1337: ampost <#846394671222882334> am
+Delight#1337: ampost <#846394671222882334> am
+Delight#1337: ampost <#846394671222882334> am
+Delight#1337: ampost <#846394671222882334> am
+Delight#1337: ampost <#846394671222882334> am
+Delight#1337: ampost <#846394671222882334> hamam
+Delight#1337: <:SmugQueen:363053540677255168>
+Desto2000#0423: çok hızlanıyor
+Desto2000#0423: demi
+Delight#1337: evet baya
+Desto2000#0423: düşünsene şunun 100 serverda olduğunu
+Desto2000#0423: nasıl hızlı olur
+Delight#1337: <a:wherethepussiesat:836412060387770412>
+Desto2000#0423: bence bi clear at
+Delight#1337: mesajlar her zaman değerlidir
+Desto2000#0423: o
+Desto2000#0423: k
+Delight#1337: 🆗
+Desto2000#0423: ban mesajını bi test etsene
+Desto2000#0423: birşey denedim
+Delight#1337: *ban
+Delight#1337: ay
+Delight#1337: amban
+Delight#1337: amban <@!254387001556598785>
+Delight#1337: haha
+Desto2000#0423: onu nasıl banlasın
+Delight#1337: biliyom <:hahaa:597892710506037258>
+Delight#1337: başka bir adamı banlayamam valla
+Desto2000#0423: ok
+Desto2000#0423: sunucuya zeppelin i getir çalışıyormuş gibi yapalım
+Desto2000#0423: haaha
+Delight#1337: <a:ShinobuPeek:559944117639970836>
+Desto2000#0423: bu kanal aperture ile korunmuyor artık
+Desto2000#0423: açıklama değiştir
+Delight#1337: kalbimde hala daha korunuyor tamam mı
+Desto2000#0423: ama senin mesajlarını sildi
+Delight#1337: olsun olur öyle şeyler
+Delight#1337: 
+TitaNZilla#5813: Evren başkanımız
+Desto2000#0423: alt kısım çıkmamış
+Delight#1337: 
+Desto2000#0423: en altta hiç biri yok yazıyor ya ahahah
+Delight#1337: şş
+Delight#1337: 1
+Delight#1337: 2
+Delight#1337: 3
+Desto2000#0423: 29+2
+TitaNZilla#5813: Ben bazen bunu yapıyorum
+Desto2000#0423: aferin
+Desto2000#0423: aferin
+Delight#1337: ben okumuyorum
+Delight#1337: 😎
+Delight#1337: allahu akbar
+Desto2000#0423: <@!447268676702437376> bu bot neden var
+Delight#1337: why not
+Delight#1337: اللعنة الحمار
+Delight#1337: euzubilla
+TitaNZilla#5813: Bu nüktedanlar kanalı sağcımı solcumu bazı yerler genelde solcu ddiyor
+Delight#1337: onlar gay
+Delight#1337: <:peepoOtism:814392391376568350>
+TitaNZilla#5813: Fesgiller diye bir sunucu var
+TitaNZilla#5813: Şeriat sunucusu
+Delight#1337: banlıyım
+Desto2000#0423: basalım eheheh
+Delight#1337: <:peepoOtism:814392391376568350>
+TitaNZilla#5813: Aynı fikirde olmayanları banlıyorlar
+Desto2000#0423: 3iq
+Delight#1337: evet banlandım
+Desto2000#0423: basalım eheheh
+Delight#1337: r/muslumanturk'ten de banlıyım
+Desto2000#0423: ehehhehe
+Delight#1337: r/deliler'den de
+TitaNZilla#5813: Oraya özel nick ile gircen
+Delight#1337: 😎 🖕
+TitaNZilla#5813: ŞERİAT SİKEN 3000
+Desto2000#0423: ahhaha
+Desto2000#0423: aynen
+Delight#1337: kgb de biri girdi zaten dı dıdı ıdıgı ıdı ı
+Desto2000#0423: 3000 kişi gidecez sırayla şeriat siken 1 den 3000 e kadar nick olcak
+Desto2000#0423: öhh
+Delight#1337: benim zaten bir planım var hahahaha
+TitaNZilla#5813: ŞeriatcıGötüSiken diye nickle
+Delight#1337: ileri de görürsünüz
+Desto2000#0423: birde türk olupta türk karşıtı sunucular var
+Desto2000#0423: giriş mesajı hoş geldin orospu çocuğu türk
+Delight#1337: neden sadece islam da bu tür milli değerler de varsayılıyor diye düşünmek lazım
+TitaNZilla#5813: Fesgiller çok tuhaf ya
+Desto2000#0423: utku linki atsam sıkıntı olurmu
+Delight#1337: tanıyorum ben dediklerini
+Delight#1337: ben banlıyım hepsinden
+Desto2000#0423: discord.gg/yarrak
+Desto2000#0423: aa banlandılarmı lan
+Delight#1337: düştü artık
+Delight#1337: 30 boost bastırıp reklam getiremezler
+Delight#1337: o devir kapandı
+Delight#1337: 30 boost basma olayı ve tekniğini discord kaldırdı
+Delight#1337: 
+Desto2000#0423: ahahah
+Desto2000#0423: bu gerçekmi
+Delight#1337: he gerçek bru man
+TitaNZilla#5813: Aynen gerçekten diyor
+Delight#1337: ne
+Delight#1337: bunu gerçek mi sandınız
+Delight#1337: ğprwğgworğpwopgwprprgpğro
+TitaNZilla#5813: Lan ben
+Desto2000#0423: ahahah
+TitaNZilla#5813: ironi olarak
+TitaNZilla#5813: diyorum zaten
+TitaNZilla#5813: ona
+Delight#1337: he iyi bar
+Delight#1337: ğlwglrlgw
+Delight#1337: Atatürk zaten kafir
+Delight#1337: 😎 🖕
+Desto2000#0423: ampost <#846394671222882334> amk bi komut kullanın ya
+Desto2000#0423: lan
+Desto2000#0423: ddddd
+Delight#1337: ampost <#846394671222882334> amk bi komut kullanın ya
+Delight#1337: <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668> <a:neptune_dance:514125992537882668>
+Delight#1337: 
+Desto2000#0423: ahhaah
+Desto2000#0423: bu çok iyi işte
+Desto2000#0423: kardeşim o haraketi yanlış yapıyorsun
+TitaNZilla#5813: 
+Delight#1337: 
+Desto2000#0423: ahahah
+Delight#1337: 
+Delight#1337: bu ne amk opwkgpowkrg
+Desto2000#0423: harbiden aw
+TitaNZilla#5813: güzel çizmiş lan
+Delight#1337: pwrgkpowkpowkrg
+Desto2000#0423: evet
+Desto2000#0423: bir şey diycem ben hala kick komutunu yapmadım aw
+Desto2000#0423: neyse basit zaten
+Delight#1337: 
+Delight#1337: <:thepain:608649150762057758>
+Desto2000#0423: ahahaha
+TitaNZilla#5813: https://www.youtube.com/watch?v=TqTdU2RiEFc çok haklı konuşmuş mordecai, bugs bunny, deadpool, tsubasa abim
+Desto2000#0423: kick mesajı ne olsun
+Desto2000#0423: default olan
+Delight#1337: ¯\_(ツ)_/¯
+Delight#1337: kafam çalışmıyor bugün
+Desto2000#0423: default ban message:
+```
+member got bent
+```
+Desto2000#0423: member kısmında isim yazıyor
+Delight#1337: 
+TitaNZilla#5813: Sen luciferi bitirdnmi? <@!591567129594036225>
+Delight#1337: yok
+Delight#1337: 5. sezona geçerken bıraktım
+Delight#1337: yedekte tutuyorum
+Desto2000#0423: yav hadi yardım edin default kick mesajını bulalım
+TitaNZilla#5813: 2. kısımı ciddn güzel
+TitaNZilla#5813: Adam film niyetine karıları götürüyor ya la
+Delight#1337: ```
+member kicked.```
+Delight#1337: ham
+Delight#1337: ısırırım ham
+Desto2000#0423: hmm member got bent ile uyumlu olurmu
+Delight#1337: olmaz mı
+Delight#1337: pls kick <@!591567129594036225>
+Delight#1337: <:help:586006862454063125>
+TitaNZilla#5813: Bunu çal
+Desto2000#0423: bu kitchen sink te kaç komut var lan
+Delight#1337: 
+Delight#1337: baya uzun
+Desto2000#0423: bu arada configuration omutu ile database e yeni value felan ekleniyor
+Desto2000#0423: yeni fark ettim
+Desto2000#0423: o yüzden verilebilicek isimlerin bi listesini yapsam iyi olur
+Delight#1337: https://www.youtube.com/watch?v=uRY46iyXwwc
+Desto2000#0423: <@!591567129594036225> nasıl oluyor bot
+Delight#1337: cool oluyor
+Ultimate_Players#6472: tf
+Delight#1337: =welcome dest here
+Delight#1337: hi
+Delight#1337: +welcome dest here
+Delight#1337: i'm afk bb
+Delight#1337: +afk died
+Desto2000#0423: dur bakam afk sı nasıl
+Desto2000#0423: <@!591567129594036225>
+Desto2000#0423: aa yok mesaj atmıyor
+Desto2000#0423: bu afk diye
+Delight#1337: ben çok ilgileniyorum sunucu ile
+Delight#1337: zaman bol açıkcası
+Delight#1337: dinleniyim biraz
+Desto2000#0423: <@!591567129594036225> force-ban komutu eklendi
+Desto2000#0423: config ini yap
+Delight#1337: götüm ağrıyor
+Desto2000#0423: amconfiguration force message istediğin mesaj
+Desto2000#0423: ama force ban hala tam olarak bitmedi
+Karanlık#1035: sa
+Delight#1337: selam
+Desto2000#0423: acaba log ta ne kadar mesja birikti
+Desto2000#0423: bi dakika lan a ile başlayan cümleler hata verdirtiyor bota
+Desto2000#0423: aaaaaa
+Desto2000#0423: a yok hata verdirtmiyormuş
+Desto2000#0423: <@!591567129594036225> force-ban komutu bitti
+Desto2000#0423: ama önce su kahve felan içicem
+Delight#1337: +tag create eyes https://media.discordapp.net/attachments/132337078611607552/256292829414817792/eyes.png?width=402&height=223
+Desto2000#0423: tagların olayı ney
+Delight#1337: kısalaştırıyor
+Delight#1337: copy-pasta amacı görüyor maksat
+Delight#1337: +tag eyes
+Delight#1337: <:thepain:608649150762057758>
+Desto2000#0423: tag oluşturabiliyormuyum ben
+Delight#1337: evet
+Desto2000#0423: çok köpüklü yapmışım kahveyi
+Delight#1337: sad
+Desto2000#0423: tagları nasıl görebiliyorsun
+Delight#1337: +tag list
+Delight#1337: <:peepoOtism:814392391376568350>
+Delight#1337: bu sunucu 10 ay önce ki sunucu
+Delight#1337: çok var o yüzden
+Delight#1337: +tag aga
+Delight#1337: <:peepoOtism:814392391376568350>
+Delight#1337: +tag #yetkiliinfo
+Desto2000#0423: şey sen benim bir yazıyımı ney tag yapmıştın botun yazsımı ney
+Delight#1337: idk man
+Delight#1337: +tag info #yetkiliinfo
+Delight#1337: 146 gün önce ayak basmışım buralara
+Delight#1337: +tag 42
+Delight#1337: what is this
+Delight#1337: +tag awoo
+Delight#1337: uiy cute
+Delight#1337: +tag +tag
+Delight#1337: <:bramen:788131010105442324>
+Desto2000#0423: tor nodelerinin %25 i sahte çıkmış
+Delight#1337: +tag create 10 1:26:22
+Desto2000#0423: +tag create bestbot Shell
+Desto2000#0423: +tag bestbot
+Desto2000#0423: ahahhhahah
+Desto2000#0423: 5+2=+5
+Desto2000#0423: ahahhaahah
+Desto2000#0423: 28 + 3
+Delight#1337: <@!608659142332383235> polat yazmış bana
+Delight#1337: <a:neptune_dance:514125992537882668>
+Delight#1337: <a:CatDance2:744563025364910080>
+Desto2000#0423: ne demiş
+Delight#1337: sunucunu atta boost süresi bitmeden basayım demiş
+Desto2000#0423: barışmak istiyormu
+Delight#1337: ben de benimle barış dedim
+Delight#1337: istiyor galiba yani
+Desto2000#0423: vallaha force ban atarım burdna
+Desto2000#0423: eheheh sen bilmiyon ama ben yönetebiliyorum
+Delight#1337: bunu bana erken söyledin
+Delight#1337: <:peepoOtism:814392391376568350>
+Desto2000#0423: yok lan
+Desto2000#0423: ellemedim hiç
+Delight#1337: denetim kaydında sorun olursa botlar söylüyor bana
+Delight#1337: 😎
+Desto2000#0423: ee bu nu napıcan
+Delight#1337: barışmak istemiyormuş desto
+Delight#1337: bilmem ki
+Desto2000#0423: bu arada harbi harbi sunucunun tüm configlerini yönetebiliyorum
+Delight#1337: anani sikim senin
+Desto2000#0423: lan
+Desto2000#0423: ahah
+Delight#1337: saka
+Delight#1337: uzun süre gelmiyicektim normal de
+Delight#1337: başım ağrıyordu
+Delight#1337: sonra ilaç içtim
+Desto2000#0423: ha ok
+Delight#1337: dı dıdı dı
+Delight#1337: https://www.youtube.com/watch?v=2Y6Nne8RvaA
+Desto2000#0423: birşey diycem temp ban ı yapıyorum şu an kullanırmısın
+Delight#1337: https://tenor.com/view/shock-disbelief-stunned-mr-bean-gif-9553766
+Desto2000#0423: onunda custom mesagge ı olcak
+Delight#1337: belki
+Delight#1337: koy gitsin
+Desto2000#0423: biraz zorladı azcık kullanı ver
+Delight#1337: tamam kullanak
+Desto2000#0423: yarım saattir tunci ile uğraşıyoruz
+Delight#1337: komust listesi yap sana zahmet 😺
+Delight#1337: tunci is the wwtf
+Delight#1337: <a:FuckManFuck:594509871747956736>
+Delight#1337: oğlummmmmmmmm
+Desto2000#0423: komut listesi basit
+Delight#1337: discord'a telefon numarası için ticket atmıştım
+Desto2000#0423: iki kod silcem bitçek
+Delight#1337: çok eski hesabımı açtırabiliyorum galiba
+Desto2000#0423: sen bilirsin
+Desto2000#0423: tunci bana akıl veriyor
+Desto2000#0423: ben yapıyorum
+Delight#1337: WHO IS THE TUNCI?
+Desto2000#0423: tuncay yav
+Desto2000#0423: allah allah
+Delight#1337: hee
+Delight#1337: ben gittiğimdem beridir 1.000 üye'nin altına nasıl düşmedi acaba
+Delight#1337: şanslıyım bugün
+Desto2000#0423: şu an çıkmazda kaldım
+Delight#1337: noldu
+Desto2000#0423: database ten temp mute versini nasıl çekicem
+Delight#1337: ok cool
+Delight#1337: ulan düşünüyorum düşünüyorum bulamıyorum
+Desto2000#0423: serverId_userID_temp_ban
+Desto2000#0423: bunu nasıl çekicem
+Desto2000#0423: <@!694612700172386304> hg
+Delight#1337: bu amına kodumun hz.alisini çizmişler de niye hz.muhammed'in resmini çizmemişler
+Desto2000#0423: annem çağırdı
+Delight#1337: * Merhaba, son zamanlarda discord hesabımda oturum açtım ve telefonumu doğrulamam gerektiğini öğrendim. Ancak, telefon numaramı girdikten sonra bana hiçbir kod gönderilmedi. Bundan sonra, e-postamı kullanarak doğrulamaya karar verdim, ancak bunu yapmak için bir seçenek yoktu. Bu yüzden şimdi telefon doğrulama sayfasında sıkıştım. Bunu düzeltebilirseniz çok memnun olurum, çünkü discord hesabıma tekrar erişmek istiyorum.
+Delight#1337: discord'a bunu yolladım
+Desto2000#0423: şimdi utku bi loop düşün
+Delight#1337: am
+Desto2000#0423: birde komut düşün
+Delight#1337: amdöner
+Desto2000#0423: komut adamı banlayıp database de süreli veri açıyor
+Delight#1337: bru man
+Delight#1337: 30 + 89564
+Desto2000#0423: bot açıldığı andan itibaren çalışmaya başlayan loop ta o data yı çekip silinince adamının banını açması lazım
+Desto2000#0423: ama nasıl
+Delight#1337: desto bunu düşünmek yerine 31 çekseydin şu an sevgilin olurdu
+Delight#1337: 😸
+Desto2000#0423: bir şey diycem ama alınma
+Desto2000#0423: kes
+Delight#1337: powrkgwrü
+Delight#1337: pğgrlwrlwr
+Desto2000#0423: şu an stres ten titriyorum
+Delight#1337: noldu oğlum
+Delight#1337: PĞWGPĞWRGLWRG
+Delight#1337: sakin ol noldu
+Desto2000#0423: yav şu sistemle uğraşıyorum diye
+Desto2000#0423: çıkmaza vurunca böyle oluyor
+Delight#1337: sad mam an
+Delight#1337: sewerperson dinle desto iyi gelir
+Delight#1337: https://www.youtube.com/watch?v=3Twcaa-uDAk&list=RD3Twcaa-uDAk&start_radio=1
+Desto2000#0423: utku temp_ban ı benim üzerimde test edermisin
+Devil🖤#1875: sa
+Delight#1337: hayır
+Delight#1337: as
+Desto2000#0423: neden
+Delight#1337: olmaz banlamam
+Desto2000#0423: açılacak zaten
+Delight#1337: olmaz üzülürüm
+Desto2000#0423: amtemp-ban <@!608659142332383235> 10s
+Desto2000#0423: şunu yazı ver
+Delight#1337: amtemp-ban <@!608659142332383235> 10s
+Delight#1337: pls unban 608659142332383235
+Delight#1337: oğlum bu kadar üye ne böyle
+Desto2000#0423: time dönüştürmede hata çıktı
+Delight#1337: raid türü geliyor
+Delight#1337: gördüm de
+Delight#1337: güzel banladı yani
+Devil🖤#1875: bu sunucu tam olarak ne sunucusu
+Desto2000#0423: herşey
+Delight#1337: şu anlık sadece test man
+Delight#1337: üye filan getiriyoruz sohbet ediyoruz
+Delight#1337: 
+Delight#1337: +tag create invites https://cdn.discordapp.com/attachments/846394671222882334/849712961295613972/unknown.png
+aphilia#1715: Merhaba.
+Delight#1337: kalıbımı basarım discord api de veya discord'da bir sorun var
+Delight#1337: merhaba
+Delight#1337: hoş geldin ali
+Desto2000#0423: <@!591567129594036225> knk aynı komutu tekrar denesene sorunu tam anlamak içi birşey yaptım
+Delight#1337: fuck you desto
+aphilia#1715: NSFW iyiymiş, maşallah. 👌
+Delight#1337: ne yazcaktık
+Desto2000#0423: olum ne allah allah
+Desto2000#0423: bekle
+Delight#1337: amtemp_ban mıydı
+Desto2000#0423: amtemp-ban <@!608659142332383235> 10s
+Delight#1337: s
+Delight#1337: g
+Delight#1337: amtemp-ban <@!608659142332383235> 10s
+Delight#1337: 😎
+Delight#1337: banned.
+Delight#1337: ee
+Delight#1337: açsana oğlum adamın banını
+Delight#1337: ben mi açayım illa
+Delight#1337: ayıp ya
+Delight#1337: pls unban 608659142332383235
+Delight#1337: öyle tabi
+Delight#1337: özel subreddit var orası için
+aphilia#1715: İyi iyim
+Delight#1337: insana girmiş ülimniati ne amk
+Delight#1337: ne tür adamlar geliyor yaw
+Delight#1337: https://open.spotify.com/track/4XfI7M5gLwEY84gYiH4RDD?si=aa89e6b745a746b6
+Delight#1337: <a:BlobGuitar1:706668471311663144>
+Delight#1337: <@!242191257202458624> test
+Delight#1337: herkes kendine özel bir sınırsız davet linki oluşturursa çok iyi olur
+Desto2000#0423: neden
+Delight#1337: güzel gözüküyor
+Delight#1337: powrkgw
+Desto2000#0423: yav ahahha
+Desto2000#0423: şimdi galiba tüm hataları düzelttim temp-ban daki
+Delight#1337: cool i guess
+Desto2000#0423: tuncay geri bi sunucuya girsin son test i yapayım
+HAKQ#1630: hello
+Desto2000#0423: custom message felan yapıcam
+Delight#1337: hi
+Delight#1337: wellcum hakq
+HAKQ#1630: taksim nerde knka
+Delight#1337: ananın amında
+HAKQ#1630: qweqwe:D
+Delight#1337: amtempban <@!608659142332383235> 10s
+Desto2000#0423: - koymadın
+Delight#1337: nereye
+Desto2000#0423: temp-ban
+Delight#1337: amtemp-ban <@!608659142332383235> 10s
+Delight#1337: hoş geldin desto
+Desto2000#0423: hb
+Desto2000#0423: sen beni bi bidaha banlasana 😄 😄
+Delight#1337: hayır
+Desto2000#0423: şaka şaka
+Delight#1337: <:peepoOtism:814392391376568350>
+Desto2000#0423: ama neden unban atmıyor çözemedim
+Desto2000#0423: sen help komutunu aç demiştin sanki demi
+Delight#1337: ben liste hazırla demiştim aslında
+Delight#1337: gizli komutu olan bir şey istemiştin ya ondan
+Desto2000#0423: ha
+Desto2000#0423: onu nerden yapabiliriz
+Delight#1337: sen botunu geliştirmeyi hemen düşünmediğin için
+Delight#1337: bence şimdilik bilinen sunucular da kalsın
+Delight#1337: insanlar eklemek isterse eklesinler
+Delight#1337: buraya mesela liste hazırla
+Delight#1337: bot kendisi yazsın
+Delight#1337: ben de sabitliyeyim
+Desto2000#0423: 2dk help komutunu aktif edeyimmi
+Delight#1337: et istiyorsan
+Desto2000#0423: amhelp
+Desto2000#0423: hayde
+Delight#1337: cool
+Desto2000#0423: check ten dolayı
+Desto2000#0423: help komutu çalışmıyor
+Delight#1337: sad ma man
+Desto2000#0423: ampost <#846394671222882334> ```
+ban
+kick
+temp-ban
+configuration
+force-ban
+clear
+post
+```
+Desto2000#0423: bunu yaz
+Delight#1337: ampost <#846394671222882334>
+Desto2000#0423: e mesajı yazmadın
+Delight#1337: aa
+Delight#1337: powrkgpworg
+Delight#1337: unuttum yaw
+Delight#1337: ampost <#846394671222882334>
+```
+ban
+kick
+temp-ban
+configuration
+force-ban
+clear
+post
+```
+Desto2000#0423: bu değişir ilerde
+Delight#1337: sorun yok sabitleriz yine
+Desto2000#0423: force-ban ı test edelimmi
+Desto2000#0423: 😄
+Delight#1337: <:peepoOtism:814392391376568350>
+Delight#1337: <:peepoIgnore:612343528693170189>
+Desto2000#0423: bu arada ama yazınca hata veriyor bot
+Desto2000#0423: ama
+Desto2000#0423: terminalde hata veriyor
+Desto2000#0423: şimdi çözdüm
+Delight#1337: neden kki
+Desto2000#0423: am prefix
+Desto2000#0423: ya
+Desto2000#0423: a yıda komut sanıyor
+Delight#1337: powkrgpwk
+Desto2000#0423: ama critic bir hata değil
+Delight#1337: şu projeyi hostlayacak bir yer bulsaydık iyi olurdu
+Desto2000#0423: ben açarım işte böyle
+Desto2000#0423: hattaha istersen benim bot ile get yapayım
+Delight#1337: 24/7 ile daha iyi olur
+Delight#1337: yok gerek yok canım
+Delight#1337: zaten bot
+Delight#1337: j4j yazınca çalışıyor
+Delight#1337: gece boyunca açık olsa sorun olmaz
+Desto2000#0423: pc yi kapatasıya kadar açık tutarı
+Desto2000#0423: m
+Delight#1337: yaw ben de tutarım da
+Delight#1337: yine de bulsak iyi olacak
+Desto2000#0423: aynen
+Desto2000#0423: utku temp ban ı dandik sistememi geçirsek
+Delight#1337: sen bilirsin canım
+Desto2000#0423: çünki çalışmıyor amın oğlu
+Desto2000#0423: hata da vermiyor
+Desto2000#0423: hata verse düzelteyim olsun
+Desto2000#0423: hata yok ortada
+Delight#1337: https://i.redd.it/d19fb6lrfw271.jpg
+Delight#1337: https://i.imgur.com/2TwgIcT.jpg
+Delight#1337: <a:animePensive:576665679084650507>
+Delight#1337: https://i.redd.it/tgg0h2tqfw271.jpg
+Delight#1337: https://i.imgur.com/wSKV0zM.jpg
+Delight#1337: https://i.redd.it/uidfw0yaxv271.jpg
+Delight#1337: <@!608659142332383235> https://images-ext-2.discordapp.net/external/DI4SVT1vlIrqZZveL4JlCi01ShKDYAeZz_9XXzehEtk/https/i.redd.it/nwf8bojosnz61.jpg?width=640&height=480
+Delight#1337: ---------------
+Delight#1337: https://i.redd.it/v2ls04svgcz61.jpg
+Desto2000#0423: nsfw de beni etiketlediysen bakamam
+Delight#1337: https://i.imgur.com/Ocdc8gV.gifv
+Delight#1337: 2 tane kadın bekliyordu ayıp ettin
+Delight#1337: https://glitch.com/edit/#!/classic-whip-banon?path=package.json%3A1%3A0
+Desto2000#0423: arkamda abim yatıyor knk
+Delight#1337: o da baksın sevaptır sizin dininiz de
+Delight#1337: <a:neptune_dance:514125992537882668>
+Desto2000#0423: yav
+Desto2000#0423: allahım ahaha
+Delight#1337: yarın 6 tane self bot + ben j4j kasınca
+Delight#1337: sunucuya ne olucak merak ediyom
+Desto2000#0423: 2k 3k oluruz gibi
+Delight#1337: doğru o da var
+Desto2000#0423: son bi temp-ban ı test etsekmi değiştirdim kodu
+Delight#1337: birazdan gidiceğim ben
+Delight#1337: telefonumun şarjı da yok
+Delight#1337: yarın sabah ancak
+Desto2000#0423: ha
+Desto2000#0423: o zaman benim sunucuya gel
+Delight#1337: o glitch sayfasını napcaz
+Desto2000#0423: bilmiyorum
+Desto2000#0423: <@!591567129594036225> oldu
+Delight#1337: cool
+Delight#1337: <:tle:695488172653805611><:ele:695483374172897280><:sle:695488091473051698><:tle:695488172653805611>
+Desto2000#0423: bu arada o post komutunu mesja yönetme izni olanlar kullanabilsinmi
+Desto2000#0423: şu an guild manager
+Delight#1337: <a:mrt:695501264506847232><a:mre:695499040724353125><a:mrs:695501170793250876><a:mrt:695501264506847232>
+Delight#1337: cool
+Desto2000#0423: böylemi kalsın
+Delight#1337: kalsın
+Desto2000#0423: ok
+Desto2000#0423: acaba o post komutunu bendemi kullanabilsem
+Desto2000#0423: ona özel check yapıp
+Desto2000#0423: ama oda değişik
+Desto2000#0423: neyse ya
+Desto2000#0423: gerek yok
+Delight#1337: sen bilirsin
+Desto2000#0423: utku temp ban da da custom message olsun demi
+Delight#1337: olsun
+Desto2000#0423: onu biraz garip yapıcam
+Delight#1337: öldü de
+Delight#1337: <:peepoOtism:814392391376568350>
+Desto2000#0423: yok
+Desto2000#0423: zaten default mesajı
+Desto2000#0423: bir süreliğine eğildi
+Delight#1337: <:THINKing:253049253553766400>
+Desto2000#0423: ban mesajının bi değişiği
+Delight#1337: hmm
+Desto2000#0423: yav temp ban ın conf u değişik olcak
+Desto2000#0423: birde bir temp ban bitince mesaj atsınmı
+Desto2000#0423: temp ban ı klaktı gibisinden
+Desto2000#0423: <@!591567129594036225>
+Delight#1337: ne
+Delight#1337: ay
+Delight#1337: he
+Delight#1337: yazcaktım
+Delight#1337: bilmiyorum yaw kafam karışık bira
+Desto2000#0423: bence gereksiz
+Desto2000#0423: adam banladığı adamı neden umursasın
+Delight#1337: doğru
+Desto2000#0423: log u yapınca yaparız onu
+Delight#1337: ben gidiyorum
+Desto2000#0423: ig
+Desto2000#0423: *help
+Desto2000#0423: amhelp
+Desto2000#0423: allah allah test sunucusunda help böyle değil
+Desto2000#0423: yeni hatırladım yetkim olmayan komutları help mesajında göremiyorum
+Desto2000#0423: <@!441977034843881473> müsahitsen bi amhelp yazarmısın
+! . 02 . !#9502: amhelp
+! . 02 . !#9502: tada
+Desto2000#0423: birde bir sabitleme var
+Desto2000#0423: yine bu bottan
+Desto2000#0423: onu kaldır bunu sabitle
+Desto2000#0423: komutlar yazıyor
+Desto2000#0423: tamamdır thx
+! . 02 . !#9502: https://tenor.com/view/goodbye-see-you-salute-take-care-ti-gif-12513643
+! . 02 . !#9502: fuck
+Desto2000#0423: +tag create ShellYarrak https://discord.com/channels/731744435095994378/846394671222882334/849633122408857640
+Desto2000#0423: +tah shellyarrak
+Desto2000#0423: +tag shellyarrak
+Desto2000#0423: 😄
+Desto2000#0423: utku bota neler dedirtti ya
+quake#1336: <:CuteFleurDeLis:695459532142411847> <:partner:314068430556758017> 
+Merhabalar, yeni bir mail ve duyuru ile yine karşınızdayım.
+
+Bu duyuru da Discord'un Topluluk Sunucusunu açan sunuculara tanıdığı haklardan birisi olan, partner programından bahsediceğim. Şu an ki partner programı bir diğerinden çok daha farklı bir program, şartları ve gereksinimleri'nin çoğunu karşılamamıza rağmen __tek bir tane__ gereksinimi karşılayamıyoruz. Şu an bile bu durumu çok açık bir şekil de görebilmemize rağmen,  yine de bu yazıyı yazmak istiyorum.
+    • 2FA koruması __açık.__
+    • Temiz bir ortam __var.__
+    • 10 aylık bir __sunucu.__
+    • Sunucu aktifliği maalesef ki yok, bu yazıyı okuyan sadece ben olucağımdan bunu anlayabilirsiniz.
+    • Sunucuda kötü kelime __yok.__
+
+Evet, sunucu'nun en büyük sorunu aktiflik, benim bunu buraya yazmamın sebebi de sırf duyuru olsun hoş olsun, güzel gözüksün diye, bunu yazdıktan sonra emin olun yine sunucuda benden başka en fazla 1 kişi sohbet ediyor olur. Bu soruna yönelik ek fikir ve planlarım olmasına rağmen onları uyguladığım zaman elime doğru düzgün bir şey geçmeyeceğini düşünüyorum.
+    Partnerlik almak istemediğim bir şey değil fakat yine de bunu yapabilmek için inorganik bir aktiflik veya inorganik üye artışı ile başarılabiliceğini zannetmiyorum.
+
+Bu partnerlik programına başvurabilmek için ilk öncelikle uzun bir zamanın geçmesi gerek. Bu zaman içerisinde yeni arkadaşlar edinmek, birilerini davet etmek filan falan, bildiğiniz şeyler. Bu tür şeyleri ben kendi başıma sağlayabilen birisi değilim sadece farklı tür de üye getirebilmek tekniklerinde elim hızlı olduğu için iyiyim.
+
+Bu soruna yönelik bir fikriniz varsa beni profilime tıklayıp "Arkadaş olarak ekle" kısmından arkadaş olarak ekleyebilirsiniz, fikirlerinize önem vermek durumundayım.
+quake#1336: <:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+quake#1336: <:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+quake#1336: <:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+quake#1336: <:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+quake#1336: <:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+<:diediedie:727224232622424174>
+quake#1336: +archive
+quake#1336: 
+Desto2000#0423: dddddd
+quake#1336: 
+quake#1336: 
+quake#1336: 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃
+quake#1336: 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃 😃
+Desto2000#0423: dddddddddddddddddddddddddddddddddddddddddddd
+Desto2000#0423: dddddddddddddddddddddddddddddddddddddddddddd
+Desto2000#0423: dddddddddddddddddddddddddddddddddddddddddddd
+Desto2000#0423: dddddddddddddddddddddddddddddddddddddddddddd
+Desto2000#0423: dddddddddddddddddddddddddddddddddddddddddddd
+dddddddddddddddddddddddddddddddddddddddddddd
+dddddddddddddddddddddddddddddddddddddddddddd
+dddddddddddddddddddddddddddddddddddddddddddd

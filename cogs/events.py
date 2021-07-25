@@ -26,9 +26,9 @@ class events(commands.Cog):
         self.bot.handler = AntiSpamHandler(self.bot, no_punish=True)
         self.bot.tracker = AntiSpamTracker(self.bot.handler, 3)
         self.bot.handler.register_extension(self.bot.tracker)
-        print("Changing ready now")
+        print("Marshall ready now")
         log = logging.getLogger("shmoke")
-        log.log(4242, "Changing ready now")
+        log.log(4242, "Marshall ready now")
 
     @commands.Cog.listener()
     async def on_raw_message_delete(self, payload: discord.RawMessageDeleteEvent):
@@ -124,7 +124,7 @@ class events(commands.Cog):
             return
         if not message.guild:
             await message.reply("```"
-                                "You cannot use Changing with direct message."
+                                "You cannot use Marshall with direct message."
                                 "```")
             return
         for i in enchant.Shell.servers():

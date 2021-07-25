@@ -25,10 +25,10 @@ class Shell(object):
         return servers
 
 
-def marsun() -> enchant.Changing:
+def marsun():
     loop = asyncio.new_event_loop()
     database.logger()
-    shell = enchant.Changing(command_prefix=enchant.get_prefix, case_insensitive=True, intents=discord.Intents.all(), loop=loop)
+    shell = enchant.Marshall(command_prefix=enchant.get_prefix, case_insensitive=True, intents=discord.Intents.all(), loop=loop)
 
     shell.config(Shell.token)
     shell.loadCogs()

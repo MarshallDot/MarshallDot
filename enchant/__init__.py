@@ -39,7 +39,7 @@ class Shell(object):
         return servers
 
 
-class Chacontext(commands.Context):
+class Marscontext(commands.Context):
     async def bug(self, value):
         try:
             with open("../logs/bugs.txt", "a") as fl:
@@ -49,7 +49,7 @@ class Chacontext(commands.Context):
             pass
 
 
-class Changing(commands.Bot):
+class Marshall(commands.Bot):
     def config(self, token):
         self.owner_ids = Shell.owners
         self.apatok = token
@@ -72,7 +72,7 @@ class Changing(commands.Bot):
         apid = str(self.sf.next_id())
         return apid[:-9]
 
-    async def get_context(self, message, *, cls=Chacontext):
+    async def get_context(self, message, *, cls=Marscontext):
         return await super().get_context(message, cls=cls)
 
 

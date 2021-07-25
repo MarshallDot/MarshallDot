@@ -1,4 +1,0 @@
-2021-07-25 23:36:02,439, 9887, DEBUG, database: Data pulled from database {'id': 864525821800742914, 'name': 'prefix'}
-2021-07-25 23:36:02,447, 9887, DEBUG, database: Data pulled from database {'id': 864525821800742914, 'name': 'message_log'}
-2021-07-25 23:36:02,453, 9887, DEBUG, database: Data pulled from database {'id': 864525821800742914, 'name': 'profanity_filter'}
-2021-07-25 23:36:02,457, 9887, DEBUG, database: Data pulled from database {'id': 864525821800742914, 'name': 'spam_filter'}

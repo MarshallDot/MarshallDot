@@ -10,21 +10,6 @@ import enchant.enchants
 from enchant import enchants
 from network.database import *
 
-logger = logging.getLogger('discord')
-logger.setLevel(logging.DEBUG)
-handler = logging.FileHandler(filename='../logs/discord.log', encoding='utf-8',
-                              mode='w')
-handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(threadName)s - %(name)s: %(message)s'))
-logger.addHandler(handler)
-
-loggerSh = logging.getLogger("shmoke")
-logging.addLevelName(4242, "SHMOKE")
-loggerSh.setLevel(4242)
-handlerSh = logging.FileHandler(filename='../logs/shmoke.log', encoding='utf-8',
-                                mode='w')
-handlerSh.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(threadName)s - %(name)s: %(message)s'))
-loggerSh.addHandler(handlerSh)
-
 
 class Shell(object):
     token = keyring.get_password("SHELL", "SHELL")

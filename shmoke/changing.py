@@ -7,7 +7,6 @@ import keyring
 
 import enchant
 from enchant import enchants
-from network import database
 
 log = logging.getLogger("shmoke")
 
@@ -27,7 +26,6 @@ class Shell(object):
 
 def marsun():
     loop = asyncio.new_event_loop()
-    database.logger()
     shell = enchant.Marshall(command_prefix=enchant.get_prefix, case_insensitive=True, intents=discord.Intents.all(), loop=loop)
 
     shell.config(Shell.token)
@@ -59,4 +57,12 @@ if __name__ == '__main__':
                                     mode='w')
     handlerSh.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(threadName)s - %(name)s: %(message)s'))
     loggerSh.addHandler(handlerSh)
+
+    db = logging.getLogger("database")
+    db.setLevel(logging.DEBUG)
+    dbHand = logging.FileHandler(filename='./logs/database.non.log',
+                                 encoding='utf-8', mode='w')
+    dbHand.setFormatter(logging.Formatter('%(asctime)s, %(process)s, %(levelname)s, %(name)s: %(message)s'))
+    db.addHandler(dbHand)
+
     marshall()

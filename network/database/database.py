@@ -34,8 +34,8 @@ class maria:
         self.cur.execute("USE VALVE")
 
     def new(self):
-        query = f"INSERT INTO server (id, mod_log, profanity_filter, message_log, spam_filter, "\
-                "mod_log_channel, ban_message, kick_message, prefix, force_ban_message)"\
+        query = f"INSERT INTO server (id, mod_log, profanity_filter, message_log, spam_filter, " \
+                "mod_log_channel, ban_message, kick_message, prefix, force_ban_message)" \
                 f"VALUES ('{self.id}', false, false, false, false, 'None','None', 'None', '*', 'None')"
         self.cur.execute(query)
         mariad.commit()
@@ -67,23 +67,27 @@ class database:
         self.mar = maria(sid)
 
     def set(self, name, data):
-        name = name.replace("-", "_")
-        if type(data) == bool:
-            if data:
-                data = "1"
-            else:
-                data = "0"
-        elif type(data) == str:
+        try:
+            name = name.replace("-", "_")
+            if type(data) == bool:
+                if data:
+                    data = "1"
+                else:
+                    data = "0"
+            elif type(data) == str:
                 data = data.replace("-", "_")
-        ret: bytes = r.get(f"{self.id}_{name}")
-        if ret:
-            r.set(f"{self.id}_{name}", f"{data}")
-        self.mar.set(name, data)
+            ret: bytes = r.get(f"{self.id}_{name}")
+            if ret:
+                r.set(f"{self.id}_{name}", f"{data}")
+            self.mar.set(name, data)
+        except:
+            return False
         nndata = dict()
         nndata["id"] = self.id
         nndata["name"] = name
         nndata["value"] = data
         db.debug(f"A data in the database has been changed {nndata}")
+        return True
 
     def get(self, name):
         try:
@@ -107,7 +111,7 @@ class database:
                 db.debug(f"Data pulled from database {nndata}")
                 return ret.decode()
         except:
-            retm = self.mar.get(name)
+            retm = str(self.mar.get(name))
             if retm == "0":
                 r.set(f"{self.id}_{name}", "0")
                 nndata = dict()
@@ -147,11 +151,16 @@ class database:
         nndata = dict()
         nndata["id"] = self.id
         db.debug(f"Server deleted on database {nndata}")
+        return True
 
     def new(self):
         for i in Shell.servers():
             if int(i) == self.id:
-                self.mar.new()
+                try:
+                    self.mar.new()
+                except:
+                    return False
                 nndata = dict()
                 nndata["id"] = self.id
                 db.debug(f"New server created on database {nndata}")
+        return True

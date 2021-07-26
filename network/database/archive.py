@@ -7,7 +7,10 @@ import pymongo
 db = logging.getLogger("database")
 
 
-mogoClient = pymongo.MongoClient("mongodb+srv://tuncaydesto:tuncaydesto31@cluster0.nz05n.mongodb.net/tortiy?retryWrites=true&w=majority")
+mongourl = keyring.get_password("MogoMar", "MogoMar")
+
+
+mogoClient = pymongo.MongoClient(mongourl)
 mogoDb = mogoClient["tortiy"]
 
 

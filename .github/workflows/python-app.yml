@@ -34,3 +34,4 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+        python /shmoke/changing.py

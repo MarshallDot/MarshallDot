@@ -28,6 +28,10 @@ class Config(commands.Cog):
         db = enchant.database(ctx.guild.id)
         if service == "mod-log":
             if not db.get("mod_log"):
+                if not db.get("message_log"):
+                    await ctx.reply("```"
+                                    "Before you can open mod-log you need to open Message-log."
+                                    "```")
                 if not value:
                     await ctx.reply("```"
                                     "Please specify a text channel"

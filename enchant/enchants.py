@@ -1,4 +1,5 @@
 import keyring
+import redis
 from discord.ext import commands
 
 from network import database
@@ -8,5 +9,5 @@ threads = []
 bot: commands.Bot
 kill: bool = False
 password = keyring.get_password('VALVEDB', 'VALVEDB')
-r = database.r
-r_funcs = database.r_funcs
+r = redis.Redis(host='localhost', port=5005)
+r_funcs = redis.StrictRedis(host='localhost', port=5005)

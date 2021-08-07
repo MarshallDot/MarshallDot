@@ -4,11 +4,13 @@ Discord-Anti-Spam
 discord.py
 requests
 PyNaCl
-pynput
+spacy
 python-dotenv
 gevent
 colorama
+sonyflake-py
 bs4
+flask
 keyring
 profanity-filter
 python-Levenshtein

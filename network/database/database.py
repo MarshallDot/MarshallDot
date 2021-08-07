@@ -22,8 +22,7 @@ class Shell(object):
         return servers
 
 
-passwordmaria = keyring.get_password('VALVEDB', 'VALVEDB')
-mariad = mariadb.connect(user="root", password=passwordmaria, host="localhost", port=3306)
+mariad = mariadb.connect(user="root", password="example", host="localhost", port=4004)
 dicy = dict()
 
 
@@ -31,7 +30,7 @@ class maria:
     def __init__(self, sid):
         self.id = sid
         self.cur = mariad.cursor()
-        self.cur.execute("USE VALVE")
+        self.cur.execute("USE marshall")
 
     def new(self):
         query = f"INSERT INTO server (id, mod_log, profanity_filter, message_log, spam_filter, " \
@@ -54,9 +53,8 @@ class maria:
         self.cur.execute(f"DELETE FROM server WHERE id = {self.id}")
 
 
-password = keyring.get_password('VALVEDB', 'VALVEDB')
-r = redis.Redis(host='localhost', port=6379, db=0, password=password)
-r_funcs = redis.StrictRedis(host='localhost', port=6379, db=0, password=password)
+r = redis.Redis(host='localhost', port=5005)
+r_funcs = redis.StrictRedis(host='localhost', port=5005)
 
 
 class database:

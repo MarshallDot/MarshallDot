@@ -1,8 +1,6 @@
 import redis
-import keyring
 
-passw = keyring.get_password("VALVEDB", "VALVEDB")
-r = redis.Redis(host='localhost', port=6379, db=0, password=passw)
+r = redis.Redis(host='localhost', port=5005)
 ser = str(input("Server >"))
 try:
     servers: bytes = r.get("servers")

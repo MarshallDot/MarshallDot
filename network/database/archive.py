@@ -14,8 +14,7 @@ mogoClient = pymongo.MongoClient(mongourl)
 mogoDb = mogoClient["tortiy"]
 
 
-passwordmaria = keyring.get_password('VALVEDB', 'VALVEDB')
-mariad = mariadb.connect(user="root", password=passwordmaria, host="localhost", port=3306)
+mariad = mariadb.connect(user="root", password="example", host="localhost", port=4004)
 dicy = dict()
 
 
@@ -26,7 +25,7 @@ class logg:
         self.type = type
         self.log = log
         self.cur = mariad.cursor()
-        self.cur.execute("USE VALVE")
+        self.cur.execute("USE marshall")
 
     def new(self):
         query = f"INSERT INTO log (id, server_id, type, log)"\
@@ -46,7 +45,7 @@ class logg:
 
 def get_log(sid, sid2):
     cur = mariad.cursor()
-    cur.execute("USE VALVE")
+    cur.execute("USE marshall")
     cur.execute(f"SELECT * FROM log WHERE id = {sid} AND server_id = {sid2} LIMIT 1")
     results = cur.fetchall()
     results[0][2]: str

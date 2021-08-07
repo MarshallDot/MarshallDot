@@ -4,88 +4,76 @@
 	<Project>
 		<Option title="Object_C"/>
 		<Option makefile_is_custom="1"/>
-		<Option compiler="gcc"/>
+		<Option compiler="msvc8"/>
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug"/>
+				<Option working_dir="C:/Marshall/Project/enchant/Object-C/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="rebuild_cache">
-				<Option working_dir="/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Marshall\Project\enchant\Object-C\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Marshall\Project\enchant\Object-C\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Marshall\Project\enchant\Object-C\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Marshall\Project\enchant\Object-C\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Object_C">
-				<Option output="/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug/Object_C" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug"/>
+				<Option output="C:/Marshall/Project/enchant/Object-C/cmake-build-debug/Object_C.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Marshall/Project/enchant/Object-C/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/9"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
-					<Add directory="/usr/include/c++/9/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30037\include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug/Makefile&quot;  VERBOSE=1 Object_C"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Marshall\Project\enchant\Object-C\cmake-build-debug\Makefile VERBOSE=1 Object_C"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Marshall\Project\enchant\Object-C\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Marshall\Project\enchant\Object-C\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Marshall\Project\enchant\Object-C\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Object_C/fast">
-				<Option output="/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug/Object_C" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug"/>
+				<Option output="C:/Marshall/Project/enchant/Object-C/cmake-build-debug/Object_C.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Marshall/Project/enchant/Object-C/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
-				<Option compiler="gcc"/>
+				<Option compiler="msvc8"/>
 				<Compiler>
-					<Add directory="/usr/include/c++/9"/>
-					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
-					<Add directory="/usr/include/c++/9/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/include/x86_64-linux-gnu"/>
-					<Add directory="/usr/include"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.29.30037\include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug/Makefile&quot;  VERBOSE=1 Object_C/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/fezciberk/valve/shell/enchant/Object-C/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f C:\Marshall\Project\enchant\Object-C\cmake-build-debug\Makefile VERBOSE=1 Object_C/fast"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Marshall\Project\enchant\Object-C\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Marshall\Project\enchant\Object-C\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Marshall\Project\enchant\Object-C\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Marshall/Project/enchant/Object-C/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Marshall\Project\enchant\Object-C\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Marshall\Project\enchant\Object-C\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Marshall\Project\enchant\Object-C\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Marshall\Project\enchant\Object-C\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Marshall/Project/enchant/Object-C/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f C:\Marshall\Project\enchant\Object-C\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f C:\Marshall\Project\enchant\Object-C\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f C:\Marshall\Project\enchant\Object-C\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f C:\Marshall\Project\enchant\Object-C\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/fezciberk/valve/shell/enchant/Object-C/main.cpp">
+		<Unit filename="C:/Marshall/Project/enchant/Object-C/main.cpp">
 			<Option target="Object_C"/>
 		</Unit>
-		<Unit filename="/home/fezciberk/valve/shell/enchant/Object-C/CMakeLists.txt">
+		<Unit filename="C:/Marshall/Project/enchant/Object-C/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

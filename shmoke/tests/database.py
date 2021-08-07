@@ -4,14 +4,12 @@ import enchant
 
 class DatabaseTestCase(unittest.TestCase):
     def test_something(self):
-        db = enchant.database("862786056834121798")
-        self.assertTrue(db.new())
-        self.assertTrue(db.set("message_log", True))
-        self.assertTrue(db.set("mod_log", True))
-        self.assertTrue(db.set("profanity_filter", True))
-        self.assertTrue(db.set("spam_filter", True))
-        self.assertTrue(db.set("prefix", "!"))
-        self.assertTrue(db.delete())
-
-
-unittest.main()
+        db = enchant.database("123456789123456789")
+        test = self.assertTrue(db.new())
+        test2 = self.assertTrue(db.set("message_log", True))
+        test3 = self.assertTrue(db.set("mod_log", True))
+        test4 = self.assertTrue(db.set("profanity_filter", True))
+        test5 = self.assertTrue(db.set("spam_filter", True))
+        test6 = self.assertTrue(db.set("prefix", "!"))
+        test7 = self.assertTrue(db.delete())
+        return f"{test}, {test2}, {test3}, {test4}, {test5}, {test6}, {test7}"

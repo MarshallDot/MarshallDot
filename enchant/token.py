@@ -1,6 +1,5 @@
-from keyring import set_password
-import getpass
+import keyring
 
 service_id = 'SHELL'
-token = getpass.getpass(prompt='Token: ', stream=None)
-set_password(service_id, service_id, token)
+token = input("Token: ")
+keyring.set_password(service_id, service_id, token)

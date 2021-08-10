@@ -1,6 +1,7 @@
 import asyncio
 import logging
 
+import aiohttp
 import discord
 import keyring
 

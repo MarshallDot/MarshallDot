@@ -1,6 +1,7 @@
 import asyncio
 import logging
 
+import aiohttp
 import discord
 from discord.ext import commands
 
@@ -46,18 +47,33 @@ class Moderation(commands.Cog):
     @commands.guild_only()
     @commands.check(check)
     async def ban(self, ctx: commands.Context, member: discord.Member, reason=None):
-        database = enchant.database(ctx.guild.id)
         await ctx.message.delete()
         if not reason:
             await member.ban()
         else:
             await member.ban(reason=reason)
-        if database.get("ban_message") == "None":
+        headers = {
+            'User-Agent': f'{ctx.guild.id} ban_message'
+        }
+        async with aiohttp.ClientSession() as session:
+            async with session.get('http://localhost:6006/', headers=headers) as r:
+                if r.status == 200:
+                    js = await r.json()
+                    data = js[0]["data"]
+        if data == "None":
             await ctx.send("```"
                            f"{member} got bent!"
                            "```")
         else:
-            pos = database.get("ban_message").split(" ")
+            headers = {
+                'User-Agent': f'{ctx.guild.id} ban_message'
+            }
+            async with aiohttp.ClientSession() as session:
+                async with session.get('http://localhost:6006/', headers=headers) as r:
+                    if r.status == 200:
+                        js = await r.json()
+                        data = js[0]["data"]
+            pos = data.split(" ")
             text = ""
             for i in pos:
                 if i == "{member}":
@@ -72,18 +88,33 @@ class Moderation(commands.Cog):
     @commands.guild_only()
     @commands.check(check)
     async def kick(self, ctx: commands.Context, member: discord.Member, reason=None):
-        database = enchant.database(ctx.guild.id)
         await ctx.message.delete()
         if not reason:
             await member.kick()
         else:
             await member.kick(reason=reason)
-        if database.get("kick_message") == "None":
+        headers = {
+            'User-Agent': f'{ctx.guild.id} kick_message'
+        }
+        async with aiohttp.ClientSession() as session:
+            async with session.get('http://localhost:6006/', headers=headers) as r:
+                if r.status == 200:
+                    js = await r.json()
+                    data = js[0]["data"]
+        if data == "None":
             await ctx.send("```"
                            f"{member} kicked"
                            "```")
         else:
-            pos = database.get("kick_message").split(" ")
+            headers = {
+                'User-Agent': f'{ctx.guild.id} kick_message'
+            }
+            async with aiohttp.ClientSession() as session:
+                async with session.get('http://localhost:6006/', headers=headers) as r:
+                    if r.status == 200:
+                        js = await r.json()
+                        data = js[0]["data"]
+            pos = data.split(" ")
             text = ""
             for i in pos:
                 if i == "{member}":
@@ -97,7 +128,6 @@ class Moderation(commands.Cog):
     @commands.guild_only()
     @commands.check(check)
     async def force(self, ctx: commands.Context, id):
-        database = enchant.database(ctx.guild.id)
         try:
             forced = network.database.r.get(f"{ctx.guild.id}_forced")
         except:
@@ -105,12 +135,28 @@ class Moderation(commands.Cog):
             return
         forcedd = str(forced) + f", {id}"
         network.database.r.set(f"{ctx.guild.id}_forced", forcedd)
-        if database.get("force_ban_message") == "None":
+        headers = {
+            'User-Agent': f'{ctx.guild.id} forc_ban_message'
+        }
+        async with aiohttp.ClientSession() as session:
+            async with session.get('http://localhost:6006/', headers=headers) as r:
+                if r.status == 200:
+                    js = await r.json()
+                    data = js[0]["data"]
+        if data == "None":
             await ctx.reply("```"
                             f"{id} force banned"
                             "```")
         else:
-            pos = database.get("force_ban_message").split(" ")
+            headers = {
+                'User-Agent': f'{ctx.guild.id} force_ban_message'
+            }
+            async with aiohttp.ClientSession() as session:
+                async with session.get('http://localhost:6006/', headers=headers) as r:
+                    if r.status == 200:
+                        js = await r.json()
+                        data = js[0]["data"]
+            pos = data.get("force_ban_message").split(" ")
             text = ""
             for i in pos:
                 if i == "{member}":
@@ -124,18 +170,33 @@ class Moderation(commands.Cog):
     @commands.guild_only()
     @commands.check(check)
     async def temp(self, ctx: commands.Context, member: discord.Member, time="24h", reason=None):
-        database = enchant.database(ctx.guild.id)
         await ctx.message.delete()
         if not reason:
             await member.ban()
         else:
             await member.ban(reason=reason)
-        if database.get("temp_ban_message") == "None":
+        headers = {
+            'User-Agent': f'{ctx.guild.id} temp_ban_message'
+        }
+        async with aiohttp.ClientSession() as session:
+            async with session.get('http://localhost:6006/', headers=headers) as r:
+                if r.status == 200:
+                    js = await r.json()
+                    data = js[0]["data"]
+        if data == "None":
             await ctx.send("```"
                            f"{member} got bent for a while"
                            "```")
         else:
-            pos = database.get("temp_ban_message").split(" ")
+            headers = {
+                'User-Agent': f'{ctx.guild.id} temp_ban_message'
+            }
+            async with aiohttp.ClientSession() as session:
+                async with session.get('http://localhost:6006/', headers=headers) as r:
+                    if r.status == 200:
+                        js = await r.json()
+                        data = js[0]["data"]
+            pos = data.split(" ")
             text = ""
             for i in pos:
                 if i == "{member}":

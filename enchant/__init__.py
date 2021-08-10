@@ -1,6 +1,7 @@
 import logging
 import os
 
+import aiohttp
 import discord
 import keyring
 from discord.ext import commands
@@ -61,14 +62,16 @@ class Marshall(commands.Bot):
         return await super().get_context(message, cls=cls)
 
 
-def shmokeL(message):
-    loggerSh.log(4242, message)
-
-
-def get_prefix(client, message: discord.Message):
+async def get_prefix(client, message: discord.Message):
     try:
-        server = database(message.guild.id)
-        prefix = server.get("prefix")
+        headers = {
+            'User-Agent': f'{message.guild.id} prefix'
+        }
+        async with aiohttp.ClientSession() as session:
+            async with session.get('http://localhost:6006/', headers=headers) as r:
+                if r.status == 200:
+                    js = await r.json()
+                    prefix = js[0]["data"]
         return commands.when_mentioned_or(prefix)(client, message)
     except:
         return commands.when_mentioned_or("*")(client, message)

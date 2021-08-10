@@ -70,8 +70,14 @@ class Utility(commands.Cog):
     @commands.guild_only()
     @commands.check(check)
     async def _getmessage(self, ctx: commands.Context):
-        db = enchant.database(ctx.guild.id)
-        data = db.get("message_log")
+        headers = {
+            'User-Agent': f'{ctx.guild.id} message_log'
+        }
+        async with aiohttp.ClientSession() as session:
+            async with session.get('http://localhost:6006/', headers=headers) as r:
+                if r.status == 200:
+                    js = await r.json()
+                    data = js[0]["data"]
         prefix = enchant.get_prefix()
         if data:
             await ctx.author.send(

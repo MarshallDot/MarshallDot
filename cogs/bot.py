@@ -12,6 +12,7 @@ class HelpCommand(commands.HelpCommand):
     async def send_bot_help(self, mapping):
         text = "```\n"
         text += ""
+        prefix_not = f"Prefix for using commands: {self.clean_prefix}"
         for cog in mapping:
             cog: commands.Cog
             if not cog:
@@ -28,6 +29,7 @@ class HelpCommand(commands.HelpCommand):
                 else:
                     command += f"{com.qualified_name}, "
             text += f"{cog.qualified_name}: {command}\n"
+        text += prefix_not
         text += "```"
         await self.get_destination().send(text)
 

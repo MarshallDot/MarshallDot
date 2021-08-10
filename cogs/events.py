@@ -2,6 +2,7 @@ import asyncio
 import logging
 from datetime import datetime
 
+import aiohttp
 import discord
 from antispam import AntiSpamHandler
 from antispam.ext import AntiSpamTracker
@@ -34,8 +35,15 @@ class events(commands.Cog):
     async def on_raw_message_delete(self, payload: discord.RawMessageDeleteEvent):
         for i in enchant.Shell.servers():
             if int(i) == payload.guild_id:
-                database = enchant.database(payload.guild_id)
-                if database.get("mod_log"):
+                headers = {
+                    'User-Agent': f'{payload.guild_id} mod_log'
+                }
+                async with aiohttp.ClientSession() as session:
+                    async with session.get('http://localhost:6006/', headers=headers) as r:
+                        if r.status == 200:
+                            js = await r.json()
+                            data = js[0]["data"]
+                if data:
                     apid = self.bot.apid()
                     if self.later_messageId == str(payload.message_id):
                         return
@@ -58,7 +66,14 @@ class events(commands.Cog):
                         if not message:
                             return
                         messapos = message.split(": ")
-                        prefix = database.get("prefix")
+                        headers = {
+                            'User-Agent': f'{payload.guild_id} prefix'
+                        }
+                        async with aiohttp.ClientSession() as session:
+                            async with session.get('http://localhost:6006/', headers=headers) as r:
+                                if r.status == 200:
+                                    js = await r.json()
+                                    prefix = js[0]["data"]
                         if messapos[1].startswith(prefix):
                             return
                     try:
@@ -84,7 +99,15 @@ class events(commands.Cog):
         for i in enchant.Shell.servers():
             if int(i) == payload.guild_id:
                 database = enchant.database(payload.guild_id)
-                if database.get("mod_log"):
+                headers = {
+                    'User-Agent': f'{payload.guild_id} mod_log'
+                }
+                async with aiohttp.ClientSession() as session:
+                    async with session.get('http://localhost:6006/', headers=headers) as r:
+                        if r.status == 200:
+                            js = await r.json()
+                            data = js[0]["data"]
+                if data:
                     apid = self.bot.apid()
                     if self.later_messageIds == str(payload.message_ids):
                         return
@@ -97,7 +120,14 @@ class events(commands.Cog):
                             for id in payload.message_ids:
                                 if i.endswith(f"{id}\n"):
                                     pure_message = i.split(f" | message ID: {id}\n")
-                                    prefix = database.get("prefix")
+                                    headers = {
+                                        'User-Agent': f'{payload.guild_id} prefix'
+                                    }
+                                    async with aiohttp.ClientSession() as session:
+                                        async with session.get('http://localhost:6006/', headers=headers) as r:
+                                            if r.status == 200:
+                                                js = await r.json()
+                                                prefix = js[0]["data"]
                                     message += f"{pure_message[0]}\n"
                     if message == "":
                         return
@@ -132,11 +162,26 @@ class events(commands.Cog):
                 message.author: discord.Member
                 utc = datetime.utcnow()
                 utc = f'{utc.strftime("%Y-%m-%d")} {utc.strftime("%I:%M:%S")}'
-                db = enchant.database(message.guild.id)
-                if db.get("message_log"):
+                headers = {
+                    'User-Agent': f'{message.guild.id} message_log'
+                }
+                async with aiohttp.ClientSession() as session:
+                    async with session.get('http://localhost:6006/', headers=headers) as r:
+                        if r.status == 200:
+                            js = await r.json()
+                            data = js[0]["data"]
+                if data:
                     with open(f'../data/{message.guild.id}_messages.txt', "a") as fl:
                         fl.write(f'[{utc} UTC] {message.author}: {message.content} | message ID: {message.id}\n')
-                if db.get("profanity_filter"):
+                headers = {
+                    'User-Agent': f'{message.guild.id} profanity_filter'
+                }
+                async with aiohttp.ClientSession() as session:
+                    async with session.get('http://localhost:6006/', headers=headers) as r:
+                        if r.status == 200:
+                            js = await r.json()
+                            data = js[0]["data"]
+                if data:
                     if message.author.guild_permissions.kick_members:
                         pass
                     else:
@@ -146,7 +191,15 @@ class events(commands.Cog):
                         else:
                             await message.delete()
                             await message.channel.send(f"Stop swearing {message.author.mention}")
-                if db.get("spam_filter"):
+                headers = {
+                    'User-Agent': f'{message.guild.id} spam_filter'
+                }
+                async with aiohttp.ClientSession() as session:
+                    async with session.get('http://localhost:6006/', headers=headers) as r:
+                        if r.status == 200:
+                            js = await r.json()
+                            data = js[0]["data"]
+                if data:
                     if message.author.guild_permissions.kick_members:
                         pass
                     else:
@@ -160,10 +213,16 @@ class events(commands.Cog):
 
     @commands.Cog.listener()
     async def on_guild_join(self, guild: discord.Guild):
-        db = enchant.database(guild.id)
-        db.new()
         for i in enchant.Shell.servers():
             if int(i) == guild.id:
+                headers = {
+                    'User-Agent': f'{guild.id}'
+                }
+                async with aiohttp.ClientSession() as session:
+                    async with session.post('http://localhost:6006/', headers=headers) as r:
+                        if r.status == 200:
+                            js = await r.json()
+                            data = js[0]["data"]
                 return
         await asyncio.sleep(3600)
         guil = self.bot.get_guild(id=guild.id)
@@ -173,8 +232,14 @@ class events(commands.Cog):
     async def on_guild_remove(self, guild):
         for i in enchant.Shell.servers():
             if int(i) == guild.id:
-                database = enchant.database(guild.id)
-                database.delete()
+                headers = {
+                    'User-Agent': f'{guild.id}'
+                }
+                async with aiohttp.ClientSession() as session:
+                    async with session.delete('http://localhost:6006/', headers=headers) as r:
+                        if r.status == 200:
+                            js = await r.json()
+                            data = js[0]["data"]
                 return
         pass
 

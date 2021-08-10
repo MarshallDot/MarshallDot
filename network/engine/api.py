@@ -7,40 +7,43 @@ engine = Flask("engine")
 
 @engine.route("/", methods=["GET"])
 def getEngine():
-    input_json = request.get_json(force=True)
-    db = network.database.database(input_json["id"])
-    getter = db.get(input_json["name"])
-    data = {'result': f'{getter}'}
-    cookiesWithMilk = {"status": "cookies", "with": "milk"}
-    return jsonify(data, cookiesWithMilk)
+    user_agent = request.headers.get('User-Agent')
+    user_agent = user_agent.split(" ")
+    db = network.database.database(user_agent[0])
+    get = db.get(user_agent[1])
+    data = [{"data": f"{get}"}, {"status": "cookies", "with": "milk"}]
+    return jsonify(data)
 
 
 @engine.route("/", methods=["POST"])
 def postEngine():
-    input_json = request.get_json(force=True)
-    db = network.database.database(input_json["id"])
+    user_agent = request.headers.get('User-Agent')
+    user_agent = user_agent.split(" ")
+    db = network.database.database(user_agent[0])
     newter = db.new()
-    data = {'result': f'{newter}'}
+    data = {'data': f'{newter}'}
     cookiesWithMilk = {"status": "cookies", "with": "milk"}
     return jsonify(data, cookiesWithMilk)
 
 
 @engine.route("/", methods=["PUT"])
 def putEngine():
-    input_json = request.get_json(force=True)
-    db = network.database.database(input_json["id"])
-    setter = db.set(input_json["name"], input_json["value"])
-    data = {'result': f'{setter}'}
+    user_agent = request.headers.get('User-Agent')
+    user_agent = user_agent.split(" ")
+    db = network.database.database(user_agent[0])
+    setter = db.set(user_agent[1], user_agent[2])
+    data = {'data': f'{setter}'}
     cookiesWithMilk = {"status": "cookies", "with": "milk"}
     return jsonify(data, cookiesWithMilk)
 
 
 @engine.route("/", methods=["DELETE"])
 def deleteEngine():
-    input_json = request.get_json(force=True)
-    db = network.database.database(input_json["id"])
+    user_agent = request.headers.get('User-Agent')
+    user_agent = user_agent.split(" ")
+    db = network.database.database(user_agent[0])
     delter = db.delete()
-    data = {'result': f'{delter}'}
+    data = {'data': f'{delter}'}
     cookiesWithMilk = {"status": "cookies", "with": "milk"}
     return jsonify(data, cookiesWithMilk)
 

@@ -1,5 +1,6 @@
 import logging
 
+import aiohttp
 import discord
 from discord.ext import commands
 
@@ -25,10 +26,25 @@ class Config(commands.Cog):
     @commands.guild_only()
     @commands.check(check)
     async def setup(self, ctx: commands.Context, service, value=None):
-        db = enchant.database(ctx.guild.id)
         if service == "mod-log":
-            if not db.get("mod_log"):
-                if not db.get("message_log"):
+            headers = {
+                'User-Agent': f'{ctx.guild.id} mod_log'
+            }
+            async with aiohttp.ClientSession() as session:
+                async with session.get('http://localhost:6006/', headers=headers) as r:
+                    if r.status == 200:
+                        js = await r.json()
+                        data = js[0]["data"]
+            if not data:
+                headers = {
+                    'User-Agent': f'{ctx.guild.id} message_log'
+                }
+                async with aiohttp.ClientSession() as session:
+                    async with session.get('http://localhost:6006/', headers=headers) as r:
+                        if r.status == 200:
+                            js = await r.json()
+                            data = js[0]["data"]
+                if not data:
                     await ctx.reply("```"
                                     "Before you can open mod-log you need to open Message-log."
                                     "```")
@@ -40,46 +56,133 @@ class Config(commands.Cog):
                 value = value.split("<#")
                 value = value[1].split(">")
                 value = value[0]
-                db.set("mod_log", True)
-                db.set("mod_log_channel", value)
+                headers = {
+                    'User-Agent': f'{ctx.guild.id} mod_log True'
+                }
+                async with aiohttp.ClientSession() as session:
+                    async with session.put('http://localhost:6006/', headers=headers) as r:
+                        if r.status == 200:
+                            js = await r.json()
+                            data = js[0]["data"]
+                headers = {
+                    'User-Agent': f'{ctx.guild.id} mod_log_channel {value}'
+                }
+                async with aiohttp.ClientSession() as session:
+                    async with session.put('http://localhost:6006/', headers=headers) as r:
+                        if r.status == 200:
+                            js = await r.json()
+                            data = js[0]["data"]
                 await ctx.reply("```"
                                 "Mod-log enabled"
                                 "```")
             else:
-                db.set("mod_log", False)
+                headers = {
+                    'User-Agent': f'{ctx.guild.id} mod_log False'
+                }
+                async with aiohttp.ClientSession() as session:
+                    async with session.put('http://localhost:6006/', headers=headers) as r:
+                        if r.status == 200:
+                            js = await r.json()
+                            data = js[0]["data"]
                 await ctx.reply("```"
                                 "Mod-log disabled"
                                 "```")
         elif service == "message-log":
-            if not db.get("message_log"):
-                db.set("message_log", True)
+            headers = {
+                'User-Agent': f'{ctx.guild.id} message_log'
+            }
+            async with aiohttp.ClientSession() as session:
+                async with session.get('http://localhost:6006/', headers=headers) as r:
+                    if r.status == 200:
+                        js = await r.json()
+                        data = js[0]["data"]
+            if not data:
+                headers = {
+                    'User-Agent': f'{ctx.guild.id} message_log True'
+                }
+                async with aiohttp.ClientSession() as session:
+                    async with session.put('http://localhost:6006/', headers=headers) as r:
+                        if r.status == 200:
+                            js = await r.json()
+                            data = js[0]["data"]
                 await ctx.reply("```"
                                 "Message-log enabled"
                                 "```")
             else:
-                db.set("message_log", False)
+                headers = {
+                    'User-Agent': f'{ctx.guild.id} message_log False'
+                }
+                async with aiohttp.ClientSession() as session:
+                    async with session.put('http://localhost:6006/', headers=headers) as r:
+                        if r.status == 200:
+                            js = await r.json()
+                            data = js[0]["data"]
                 await ctx.reply("```"
                                 "Message-log disabled"
                                 "```")
         elif service == "spam-filter":
-            if not db.get("spam_filter"):
-                db.set("spam_filter", True)
+            headers = {
+                'User-Agent': f'{ctx.guild.id} spam_filter'
+            }
+            async with aiohttp.ClientSession() as session:
+                async with session.get('http://localhost:6006/', headers=headers) as r:
+                    if r.status == 200:
+                        js = await r.json()
+                        data = js[0]["data"]
+            if not data:
+                headers = {
+                    'User-Agent': f'{ctx.guild.id} spam_filter True'
+                }
+                async with aiohttp.ClientSession() as session:
+                    async with session.put('http://localhost:6006/', headers=headers) as r:
+                        if r.status == 200:
+                            js = await r.json()
+                            data = js[0]["data"]
                 await ctx.reply("```"
                                 "Spam-filter enabled"
                                 "```")
             else:
-                db.set("spam_filter", False)
+                headers = {
+                    'User-Agent': f'{ctx.guild.id} mod_log False'
+                }
+                async with aiohttp.ClientSession() as session:
+                    async with session.put('http://localhost:6006/', headers=headers) as r:
+                        if r.status == 200:
+                            js = await r.json()
+                            data = js[0]["data"]
                 await ctx.reply("```"
                                 "Spam-filter disabled"
                                 "```")
         elif service == "profanity-filter":
-            if not db.get("profanity_filter"):
-                db.set("profanity_filter", True)
+            headers = {
+                'User-Agent': f'{ctx.guild.id} profanity_filter'
+            }
+            async with aiohttp.ClientSession() as session:
+                async with session.get('http://localhost:6006/', headers=headers) as r:
+                    if r.status == 200:
+                        js = await r.json()
+                        data = js[0]["data"]
+            if not data:
+                headers = {
+                    'User-Agent': f'{ctx.guild.id} profanity_filter True'
+                }
+                async with aiohttp.ClientSession() as session:
+                    async with session.put('http://localhost:6006/', headers=headers) as r:
+                        if r.status == 200:
+                            js = await r.json()
+                            data = js[0]["data"]
                 await ctx.reply("```"
                                 "Profanity-filter enabled"
                                 "```")
             else:
-                db.set("profanity_filter", False)
+                headers = {
+                    'User-Agent': f'{ctx.guild.id} profanity_filter False'
+                }
+                async with aiohttp.ClientSession() as session:
+                    async with session.put('http://localhost:6006/', headers=headers) as r:
+                        if r.status == 200:
+                            js = await r.json()
+                            data = js[0]["data"]
                 await ctx.reply("```"
                                 "Profanity-filter disabled"
                                 "```")
@@ -91,14 +194,20 @@ class Config(commands.Cog):
     async def configuration(self, ctx: commands.Context, command: str, typer: str, *, value):
         typer = typer.replace("-", "_")
         command = command.replace("-", "_")
-        database = enchant.database(ctx.guild.id)
         if value == "on":
             value = True
         elif value == "off":
             value = False
         if command == "all":
             if typer == "prefix":
-                database.set(typer, value)
+                headers = {
+                    'User-Agent': f'{ctx.guild.id} prefix {value}'
+                }
+                async with aiohttp.ClientSession() as session:
+                    async with session.put('http://localhost:6006/', headers=headers) as r:
+                        if r.status == 200:
+                            js = await r.json()
+                            data = js[0]["data"]
                 await ctx.reply("```"
                                 "Configurations applied"
                                 "```")
@@ -113,7 +222,14 @@ class Config(commands.Cog):
                                     f"Ban message can be up to 1000 characters"
                                     "```")
                     return
-                database.set(f"{command}_{typer}", value)
+                headers = {
+                    'User-Agent': f'{ctx.guild.id} {command}_{typer} {value}'
+                }
+                async with aiohttp.ClientSession() as session:
+                    async with session.put('http://localhost:6006/', headers=headers) as r:
+                        if r.status == 200:
+                            js = await r.json()
+                            data = js[0]["data"]
                 await ctx.reply("```"
                                 "Configurations applied"
                                 "```")
@@ -128,7 +244,14 @@ class Config(commands.Cog):
                                     f"Temp-ban message can be up to 1000 characters"
                                     "```")
                     return
-                database.set(f"{command}_{typer}", value)
+                headers = {
+                    'User-Agent': f'{ctx.guild.id} {command}_{typer} {value}'
+                }
+                async with aiohttp.ClientSession() as session:
+                    async with session.put('http://localhost:6006/', headers=headers) as r:
+                        if r.status == 200:
+                            js = await r.json()
+                            data = js[0]["data"]
                 await ctx.reply("```"
                                 "Configurations applied"
                                 "```")
@@ -143,7 +266,14 @@ class Config(commands.Cog):
                                     f"Kick message can be up to 1000 characters"
                                     "```")
                     return
-                database.set(f"{command}_{typer}", value)
+                headers = {
+                    'User-Agent': f'{ctx.guild.id} {command}_{typer} {value}'
+                }
+                async with aiohttp.ClientSession() as session:
+                    async with session.put('http://localhost:6006/', headers=headers) as r:
+                        if r.status == 200:
+                            js = await r.json()
+                            data = js[0]["data"]
                 await ctx.reply("```"
                                 "Configurations applied"
                                 "```")
@@ -156,7 +286,14 @@ class Config(commands.Cog):
                                     f"Force-ban message can be up to 1000 characters"
                                     "```")
                     return
-                database.set(f"{command}_{typer}", value)
+                headers = {
+                    'User-Agent': f'{ctx.guild.id} {command}_{typer} {value}'
+                }
+                async with aiohttp.ClientSession() as session:
+                    async with session.put('http://localhost:6006/', headers=headers) as r:
+                        if r.status == 200:
+                            js = await r.json()
+                            data = js[0]["data"]
                 await ctx.reply("```"
                                 "Configurations applied"
                                 "```")

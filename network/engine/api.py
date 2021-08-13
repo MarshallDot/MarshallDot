@@ -11,8 +11,9 @@ def getEngine():
     user_agent = user_agent.split(" ")
     db = network.database.database(user_agent[0])
     get = db.get(user_agent[1])
-    data = [{"data": f"{get}"}, {"status": "cookies", "with": "milk"}]
-    return jsonify(data)
+    data = {"data": f"{get}"}
+    cookiesWithMilk = {"status": "cookies", "with": "milk"}
+    return jsonify(data, cookiesWithMilk)
 
 
 @engine.route("/", methods=["POST"])

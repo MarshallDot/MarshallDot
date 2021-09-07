@@ -35,6 +35,7 @@ class Config(commands.Cog):
                     if r.status == 200:
                         js = await r.json()
                         data = js[0]["data"]
+            print(data)
             if not data:
                 headers = {
                     'User-Agent': f'{ctx.guild.id} message_log'

@@ -1,0 +1,5 @@
+blacksheep
+uvicorn
+psycopg2
+aiofiles
+redis

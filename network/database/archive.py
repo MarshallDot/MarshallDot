@@ -1,20 +1,66 @@
 import logging
 
+import aiofiles
 import keyring
 import mariadb
 import pymongo
+import redis
+import yaml
+from aiopg.sa import create_engine
 
 db = logging.getLogger("database")
 
-
 mongourl = keyring.get_password("MogoMar", "MogoMar")
-
 
 mogoClient = pymongo.MongoClient(mongourl)
 mogoDb = mogoClient["tortiy"]
 
 
-mariad = mariadb.connect(user="root", password="example", host="localhost", port=4004)
+async def config():
+    async with aiofiles.open('../database/data.yaml', mode='r') as f:
+        try:
+            data = yaml.safe_load(f)
+            prefix = data["prefix"]
+            postgrepass = data["postgre-password"]
+            postgredb = data["postgre-database"]
+            postgreuser = data["postgre-user"]
+            postgreport = data["postgre-port"]
+            postgrehost = data["postgre-host"]
+            redispass = data["redis-password"]
+            redisuser = data["redis-user"]
+            redisport = data["redis-port"]
+            redishost = data["redis-host"]
+            if redisuser == "None" and redispass == "None":
+                r = redis.Redis(host=redishost, port=redisport)
+                r_funcs = redis.StrictRedis(host=redishost, port=redisport)
+            elif redisuser == "None":
+                r = redis.Redis(host=redishost, port=redisport, password=redispass)
+                r_funcs = redis.StrictRedis(host=redishost, port=redisport, password=redispass)
+            elif redispass == "None":
+                r = redis.Redis(host=redishost, port=redisport, username=redispass)
+                r_funcs = redis.StrictRedis(host=redishost, port=redisport, username=redispass)
+            else:
+                r = redis.Redis(host=redishost, port=redisport, username=redispass, password=redispass)
+                r_funcs = redis.StrictRedis(host=redishost, port=redisport, username=redispass, password=redispass)
+            if postgreuser == "None" and postgrepass == "None":
+                async with create_engine(database=postgredb, host=postgrehost, port=postgreport) as engine:
+                    postengine = engine
+            elif postgreuser == "None":
+                async with create_engine(database=postgredb, host=postgrehost,
+                                         password=postgreuser, port=postgreport) as engine:
+                    postengine = engine
+            elif postgrepass == "None":
+                async with create_engine(database=postgredb, host=postgrehost,
+                                         user=postgreuser, port=postgreport) as engine:
+                    postengine = engine
+            else:
+                async with create_engine(host=postgrehost, port=postgreport, password=postgrepass,
+                                         database=postgredb, user=postgreuser) as engine:
+                    postengine = engine
+        except yaml.YAMLError as exc:
+            print(exc)
+
+
 dicy = dict()
 
 
@@ -28,8 +74,10 @@ class logg:
         self.cur.execute("USE marshall")
 
     def new(self):
-        query = f"INSERT INTO log (id, server_id, type, log)"\
-                f"VALUES ('{self.id}', '{self.id2}', '{self.type}', '{self.log}')"
+        self.log: str
+        logho = self.log.replace("'", "`")
+        query = f"INSERT INTO log (id, server_id, type, log)" \
+                f"VALUES ('{self.id}', '{self.id2}', '{self.type}', '{logho}')"
         self.cur.execute(query)
         mariad.commit()
 
@@ -48,13 +96,24 @@ def get_log(sid, sid2):
     cur.execute("USE marshall")
     cur.execute(f"SELECT * FROM log WHERE id = {sid} AND server_id = {sid2} LIMIT 1")
     results = cur.fetchall()
+    resul: str = ""
     results[0][2]: str
     results[0][3]: str
     typee = results[0][2].replace("_", " ")
-    logg = results[0][3].replace("_", " ")
-    resul = ""
-    resul += f"Type: {typee}"
-    resul += f"\nLog: {logg}"
+    resul += f"Type: {typee}\n"
+    logg: str = results[0][3].replace("_", " ")
+    logpos = logg.split("\n")
+    lenfor = 0
+    for i in logpos:
+        if i == "" or i == " ":
+            pass
+        else:
+            if lenfor == 0:
+                resul += f"Log: {i}"
+            else:
+                ii = f"\n     {i}"
+                resul += ii
+            lenfor += 1
     return resul
 
 

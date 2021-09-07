@@ -4,12 +4,20 @@ import logging
 import aiohttp
 import discord
 import keyring
+import mariadb
+import yaml
+from aiopg.sa import create_engine
 
 import enchant
 from enchant import enchants
-from network import database
 
 log = logging.getLogger("shmoke")
+
+
+async def test():
+    async with create_engine(host="127.0.0.1", port="3003", password="example",
+                             database="mar", user="root") as engine:
+        print(engine.name)
 
 
 class Shell(object):
@@ -26,7 +34,6 @@ class Shell(object):
 
 
 def marsun():
-    database.createTables()
     loop = asyncio.new_event_loop()
     shell = enchant.Marshall(command_prefix=enchant.get_prefix, case_insensitive=True, intents=discord.Intents.all(), loop=loop)
 
@@ -39,10 +46,13 @@ def marsun():
 def marshall():
     loop = asyncio.new_event_loop()
     task = loop.create_task(marsun())
+    loop.run_until_complete(test())
     loop.run_forever()
 
 
 if __name__ == '__main__':
+    loop = asyncio.new_event_loop()
+    loop.run_until_complete(enchant.config())
     logger = logging.getLogger('discord')
     logger.setLevel(logging.DEBUG)
     handler = logging.FileHandler(filename='./logs/discord.non.log', encoding='utf-8',

@@ -9,7 +9,7 @@ from sonyflake import SonyFlake
 
 import enchant.enchants
 from enchant import enchants
-from network.database import *
+from .archive import *
 
 
 class Shell(object):

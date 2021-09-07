@@ -5,7 +5,6 @@ import discord
 from discord.ext import commands
 
 import enchant
-import network
 
 bott: commands.Bot
 
@@ -96,7 +95,7 @@ class Utility(commands.Cog):
     async def note(self, ctx: commands.Context, member: discord.Member, *, note=None):
         if not note:
             try:
-                nt = network.database.r.get(f"{ctx.guild.id}_{member.id}_note")
+                nt = enchant.enchants.r.get(f"{ctx.guild.id}_{member.id}_note")
             except:
                 await ctx.reply("```"
                                 f"No notes about this user"
@@ -106,7 +105,7 @@ class Utility(commands.Cog):
                             f"Note about this user: {nt}"
                             "```")
         else:
-            network.database.r.set(f"{ctx.guild.id}_{member.id}_note", note)
+            enchant.enchants.r.set(f"{ctx.guild.id}_{member.id}_note", note)
             await ctx.reply("```"
                             f"User's note changed"
                             "```")
@@ -115,7 +114,7 @@ class Utility(commands.Cog):
     async def tag(self, ctx: commands.Context, name, *, value=None):
         if not value:
             try:
-                nt = network.database.r.get(f"{ctx.guild.id}_{name}_tag")
+                nt = enchant.enchants.r.get(f"{ctx.guild.id}_{name}_tag")
             except:
                 await ctx.reply("```"
                                 f"No data about this name on database"
@@ -123,7 +122,7 @@ class Utility(commands.Cog):
                 return
             await ctx.reply(f"{nt.decode()}")
         else:
-            network.database.r.set(f"{ctx.guild.id}_{name}_tag", value)
+            enchant.enchants.r.set(f"{ctx.guild.id}_{name}_tag", value)
             await ctx.reply("```"
                             f"This value has been added to the database with its name."
                             "```")

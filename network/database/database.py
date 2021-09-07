@@ -1,12 +1,78 @@
 import logging
+import yaml
+from psycopg2 import connect
 
 import keyring
 import redis
-import mariadb
-
-from enchant import enchants
+import aiofiles
 
 db = logging.getLogger("database")
+
+global r
+global r_funcs
+global conn
+global mariad
+global prefix
+
+
+async def config():
+    async with aiofiles.open('../database/data.yaml', mode='r') as f:
+        try:
+            cont = await f.read()
+            data = yaml.safe_load(cont)
+            prefix = data["prefix"]
+            postgrepass = data["postgre-password"]
+            postgredb = data["postgre-database"]
+            postgreuser = data["postgre-user"]
+            postgreport = data["postgre-port"]
+            postgrehost = data["postgre-host"]
+            redispass = data["redis-password"]
+            redisuser = data["redis-user"]
+            redisport = data["redis-port"]
+            redishost = data["redis-host"]
+            if redisuser == "None" and redispass == "None":
+                r = redis.Redis(host=redishost, port=redisport)
+                r_funcs = redis.StrictRedis(host=redishost, port=redisport)
+            elif redisuser == "None":
+                r = redis.Redis(host=redishost, port=redisport, password=redispass)
+                r_funcs = redis.StrictRedis(host=redishost, port=redisport, password=redispass)
+            elif redispass == "None":
+                r = redis.Redis(host=redishost, port=redisport, username=redispass)
+                r_funcs = redis.StrictRedis(host=redishost, port=redisport, username=redispass)
+            else:
+                r = redis.Redis(host=redishost, port=redisport, username=redispass, password=redispass)
+                r_funcs = redis.StrictRedis(host=redishost, port=redisport, username=redispass, password=redispass)
+            if postgreuser == "None" and postgrepass == "None":
+                conn = connect(
+                    dbname=postgredb,
+                    user=postgreuser,
+                    host="172.28.1.4",
+                    password=postgrepass
+                )
+            elif postgreuser == "None":
+                conn = connect(
+                    dbname=postgredb,
+                    user=postgreuser,
+                    host="172.28.1.4",
+                    password=postgrepass
+                )
+            elif postgrepass == "None":
+                conn = connect(
+                    dbname=postgredb,
+                    user=postgreuser,
+                    host="172.28.1.4",
+                    password=postgrepass
+                )
+            else:
+                conn = connect(
+                    dbname=postgredb,
+                    user=postgreuser,
+                    host="172.28.1.4",
+                    password=postgrepass
+                )
+            mariad = conn
+        except yaml.YAMLError as exc:
+            print(exc)
 
 
 class Shell(object):
@@ -16,13 +82,12 @@ class Shell(object):
 
     @staticmethod
     def servers():
-        servers_db: bytes = enchants.r.get("servers")
+        servers_db: bytes = r.get("servers")
         servers_db: str = servers_db.decode()
         servers = servers_db.split(", ")
         return servers
 
 
-mariad = mariadb.connect(user="root", password="example", host="localhost", port=4004)
 dicy = dict()
 
 
@@ -30,12 +95,11 @@ class maria:
     def __init__(self, sid):
         self.id = sid
         self.cur = mariad.cursor()
-        self.cur.execute("USE marshall")
 
     def new(self):
         query = f"INSERT INTO server (id, mod_log, profanity_filter, message_log, spam_filter, " \
                 "mod_log_channel, ban_message, kick_message, prefix, force_ban_message)" \
-                f"VALUES ('{self.id}', false, false, false, false, 'None','None', 'None', '*', 'None')"
+                f"VALUES ('{self.id}', false, false, false, false, 'None','None', 'None', '{prefix}', 'None')"
         self.cur.execute(query)
         mariad.commit()
 
@@ -51,10 +115,6 @@ class maria:
 
     def delete(self):
         self.cur.execute(f"DELETE FROM server WHERE id = {self.id}")
-
-
-r = redis.Redis(host='localhost', port=5005)
-r_funcs = redis.StrictRedis(host='localhost', port=5005)
 
 
 class database:

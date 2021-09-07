@@ -29,9 +29,10 @@ class HelpCommand(commands.HelpCommand):
                 else:
                     command += f"{com.qualified_name}, "
             text += f"{cog.qualified_name}: {command}\n"
-        text += prefix_not
         text += "```"
+        prefix_not = f"```{prefix_not}```"
         await self.get_destination().send(text)
+        await self.get_destination().send(prefix_not)
 
     async def send_cog_help(self, cog):
         return await super().send_cog_help(cog)

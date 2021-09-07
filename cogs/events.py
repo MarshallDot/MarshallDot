@@ -9,8 +9,6 @@ from antispam.ext import AntiSpamTracker
 from discord.ext import commands
 from profanity_filter import ProfanityFilter
 
-from network import database
-
 import enchant.enchants
 
 
@@ -20,7 +18,7 @@ class events(commands.Cog):
         self.later_messageIds = ""
         self.bot = bot
         self.filter = ProfanityFilter(analyses="deep")
-        self.filter._cache_redis = database.r
+        self.filter._cache_redis = enchant.enchants.r
 
     @commands.Cog.listener()
     async def on_ready(self):
@@ -77,7 +75,14 @@ class events(commands.Cog):
                         if messapos[1].startswith(prefix):
                             return
                     try:
-                        quer = database.get("mod_log_channel")
+                        headers = {
+                            'User-Agent': f'{payload.guild_id} mod_log_channel'
+                        }
+                        async with aiohttp.ClientSession() as session:
+                            async with session.get('http://localhost:6006/', headers=headers) as r:
+                                if r.status == 200:
+                                    js = await r.json()
+                                    quer = js[0]["data"]
                     except:
                         return
                     log = enchant.logg(apid, payload.guild_id, "message_delete", message)
@@ -98,7 +103,6 @@ class events(commands.Cog):
     async def on_raw_bulk_message_delete(self, payload: discord.RawBulkMessageDeleteEvent):
         for i in enchant.Shell.servers():
             if int(i) == payload.guild_id:
-                database = enchant.database(payload.guild_id)
                 headers = {
                     'User-Agent': f'{payload.guild_id} mod_log'
                 }
@@ -132,7 +136,14 @@ class events(commands.Cog):
                     if message == "":
                         return
                     try:
-                        quer = database.get("mod_log_channel")
+                        headers = {
+                            'User-Agent': f'{payload.guild_id} mod_log_channel'
+                        }
+                        async with aiohttp.ClientSession() as session:
+                            async with session.get('http://localhost:6006/', headers=headers) as r:
+                                if r.status == 200:
+                                    js = await r.json()
+                                    quer = js[0]["data"]
                     except:
                         return
                     log = enchant.logg(apid, payload.guild_id, "bulk_message_delete", message)
@@ -245,7 +256,7 @@ class events(commands.Cog):
 
     @commands.Cog.listener()
     async def on_message_join(self, member: discord.Member):
-        pos = database.r.get(f"{member.guild.id}_forced").split(", ")
+        pos = enchant.enchants.r.get(f"{member.guild.id}_forced").split(", ")
         for i in pos:
             if member.id == int(i):
                 await member.ban(reason="Force Ban")

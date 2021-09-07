@@ -6,7 +6,6 @@ import discord
 from discord.ext import commands
 
 import enchant
-import network
 
 bott: commands.Bot
 
@@ -129,12 +128,12 @@ class Moderation(commands.Cog):
     @commands.check(check)
     async def force(self, ctx: commands.Context, id):
         try:
-            forced = network.database.r.get(f"{ctx.guild.id}_forced")
+            forced = enchant.enchants.r.get(f"{ctx.guild.id}_forced")
         except:
-            network.database.r.set(f"{ctx.guild.id}_forced", id)
+            enchant.enchants.r.set(f"{ctx.guild.id}_forced", id)
             return
         forcedd = str(forced) + f", {id}"
-        network.database.r.set(f"{ctx.guild.id}_forced", forcedd)
+        enchant.enchants.r.set(f"{ctx.guild.id}_forced", forcedd)
         headers = {
             'User-Agent': f'{ctx.guild.id} forc_ban_message'
         }

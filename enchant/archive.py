@@ -1,7 +1,21 @@
+import logging
+
 import aiofiles
+import keyring
+import pymongo
 import redis
 import yaml
 from psycopg2 import connect
+
+db = logging.getLogger("database")
+
+
+mongourl = keyring.get_password("MogoMar", "MogoMar")
+
+
+mogoClient = pymongo.MongoClient(mongourl)
+mogoDb = mogoClient["tortiy"]
+
 
 global r
 global r_funcs
@@ -11,7 +25,7 @@ global prefix
 
 
 async def config():
-    async with aiofiles.open('../database/data.yaml', mode='r') as f:
+    async with aiofiles.open('../network/database/data.yaml', mode='r') as f:
         try:
             cont = await f.read()
             data = yaml.safe_load(cont)
@@ -70,28 +84,66 @@ async def config():
             print(exc)
 
 
-async def createTables():
-    cursor = mariad.cursor()
-    cursor.execute("""
-                    create or replace table server (
-                        id                nvarchar(18)   not null,
-                        mod_log           bool           not null,
-                        profanity_filter  bool           not null,
-                        message_log       bool           not null,
-                        spam_filter       bool           not null,
-                        mod_log_channel   nvarchar(18)   not null,
-                        ban_message       nvarchar(1000) not null,
-                        kick_message      nvarchar(1000) not null,
-                        prefix            nvarchar(50)   not null,
-                        force_ban_message nvarchar(1000) not null
-                    );
-                    """)
-    cursor.execute("""
-                    create or replace table log (
-                        id        nvarchar(18)   not null,
-                        server_id nvarchar(18)   not null,
-                        type      nvarchar(100)  not null,
-                        log       nvarchar(1800) not null
-                    );
-                   """)
-    mariad.commit()
+dicy = dict()
+
+
+class logg:
+    def __init__(self, sid, sid2, type, log):
+        self.id = sid
+        self.id2 = sid2
+        self.type = type
+        self.log = log
+        self.cur = mariad.cursor()
+        self.cur.execute("USE marshall")
+
+    def new(self):
+        self.log: str
+        logho = self.log.replace("'", "`")
+        query = f"INSERT INTO log (id, server_id, type, log)"\
+                f"VALUES ('{self.id}', '{self.id2}', '{self.type}', '{logho}')"
+        self.cur.execute(query)
+        mariad.commit()
+
+    def get(self, name):
+        self.cur.execute(f"SELECT {name} FROM log WHERE id = {self.id} AND server_id = {self.id2} LIMIT 1")
+        results = self.cur.fetchall()
+        for i in results:
+            return i[0]
+
+    def delete(self):
+        self.cur.execute(f"DELETE FROM log WHERE id = {self.id} AND server_id = {self.id2}")
+
+
+def get_log(sid, sid2):
+    cur = mariad.cursor()
+    cur.execute("USE marshall")
+    cur.execute(f"SELECT * FROM log WHERE id = {sid} AND server_id = {sid2} LIMIT 1")
+    results = cur.fetchall()
+    resul: str = ""
+    results[0][2]: str
+    results[0][3]: str
+    typee = results[0][2].replace("_", " ")
+    resul += f"Type: {typee}\n"
+    logg: str = results[0][3].replace("_", " ")
+    logpos = logg.split("\n")
+    lenfor = 0
+    for i in logpos:
+        if i == "" or i == " ":
+            pass
+        else:
+            if lenfor == 0:
+                resul += f"Log: {i}"
+            else:
+                ii = f"\n     {i}"
+                resul += ii
+            lenfor += 1
+    return resul
+
+
+def upload(id, url):
+    collection = mogoDb["photos"]
+    data = dict()
+    data["photoID"] = id
+    data["url"] = url
+    collection.insert(data)
+    db.debug(f"New photo uploaded {data}")

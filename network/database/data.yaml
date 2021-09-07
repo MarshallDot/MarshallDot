@@ -1,0 +1,12 @@
+#Default database values
+prefix: !
+#Default database configurations
+redis-port: 5005
+redis-host: localhost
+redis-user: None
+redis-password: None
+postgre-port: 8008
+postgre-host: 172.28.1.4
+postgre-database: mar
+postgre-user: root
+postgre-password: example

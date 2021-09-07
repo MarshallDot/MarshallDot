@@ -1,52 +1,77 @@
-from flask import Flask, jsonify, request
+import responses
+from blacksheep.server import Application
+from blacksheep.messages import Request
+from blacksheep.server.responses import json
+import uvicorn
 
 import network.database.database
+import network.database.tables as tables
 
-engine = Flask("engine")
+engine = Application()
+
+
+@engine.on_start()
+async def startup(ar):
+    engine.debug(ar)
+    await network.database.config()
+    await tables.config()
+    await tables.createTables()
 
 
 @engine.route("/", methods=["GET"])
-def getEngine():
+async def getEngine(request: Request):
     user_agent = request.headers.get('User-Agent')
     user_agent = user_agent.split(" ")
     db = network.database.database(user_agent[0])
     get = db.get(user_agent[1])
-    data = {"data": f"{get}"}
-    cookiesWithMilk = {"status": "cookies", "with": "milk"}
-    return jsonify(data, cookiesWithMilk)
+    if user_agent[1] == "mod_log" or user_agent[1] == "profanity_filter" or user_agent[1] == "spam_filter" or user_agent[1] == "message_log":
+        get = bool(get)
+        print(get)
+    if type(get) == bool or type(get) == int or type(get) == float:
+        data = responses.Basic(get)
+    else:
+        data = responses.Basic(f"get")
+    return json([data])
 
 
 @engine.route("/", methods=["POST"])
-def postEngine():
+async def postEngine(request: Request):
     user_agent = request.headers.get('User-Agent')
     user_agent = user_agent.split(" ")
     db = network.database.database(user_agent[0])
     newter = db.new()
-    data = {'data': f'{newter}'}
-    cookiesWithMilk = {"status": "cookies", "with": "milk"}
-    return jsonify(data, cookiesWithMilk)
+    data = responses.Basic(f'{newter}')
+    return json([data])
 
 
 @engine.route("/", methods=["PUT"])
-def putEngine():
+async def putEngine(request: Request):
     user_agent = request.headers.get('User-Agent')
     user_agent = user_agent.split(" ")
+    forleng = 0
+    value = ""
+    for i in user_agent:
+        if forleng == 0:
+            pass
+        elif forleng == 1:
+            pass
+        else:
+            value += i
+        forleng += 1
     db = network.database.database(user_agent[0])
-    setter = db.set(user_agent[1], user_agent[2])
-    data = {'data': f'{setter}'}
-    cookiesWithMilk = {"status": "cookies", "with": "milk"}
-    return jsonify(data, cookiesWithMilk)
+    setter = db.set(user_agent[1], value)
+    data = responses.Basic(f"{setter}")
+    return json([data])
 
 
 @engine.route("/", methods=["DELETE"])
-def deleteEngine():
+def deleteEngine(request: Request):
     user_agent = request.headers.get('User-Agent')
     user_agent = user_agent.split(" ")
     db = network.database.database(user_agent[0])
     delter = db.delete()
-    data = {'data': f'{delter}'}
-    cookiesWithMilk = {"status": "cookies", "with": "milk"}
-    return jsonify(data, cookiesWithMilk)
+    data = responses.Basic(f"{delter}")
+    return json([data])
 
 
-engine.run(host="::1", port=6006)
+uvicorn.run(engine, port=6006, host="::1")

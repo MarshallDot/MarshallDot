@@ -35,7 +35,6 @@ class Config(commands.Cog):
                     if r.status == 200:
                         js = await r.json()
                         data = js[0]["data"]
-            print(data)
             if not data:
                 headers = {
                     'User-Agent': f'{ctx.guild.id} message_log'
@@ -163,7 +162,8 @@ class Config(commands.Cog):
                     if r.status == 200:
                         js = await r.json()
                         data = js[0]["data"]
-            if not data:
+                        data = bool(data)
+            if data == False:
                 headers = {
                     'User-Agent': f'{ctx.guild.id} profanity_filter True'
                 }

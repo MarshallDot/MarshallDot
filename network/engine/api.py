@@ -1,3 +1,7 @@
+import logging
+
+import redis
+
 import responses
 from blacksheep.server import Application
 from blacksheep.messages import Request
@@ -5,49 +9,45 @@ from blacksheep.server.responses import json
 import uvicorn
 
 import network.database.database
-import network.database.tables as tables
 
 engine = Application()
 
 
 @engine.on_start()
 async def startup(ar):
-    engine.debug(ar)
-    await network.database.config()
-    await tables.config()
-    await tables.createTables()
+    db = logging.getLogger("database")
+    db.setLevel(logging.DEBUG)
+    dbHand = logging.FileHandler(filename='../../shmoke/logs/database.non.log',
+                                 encoding='utf-8', mode='w')
+    dbHand.setFormatter(logging.Formatter('%(asctime)s, %(process)s, %(levelname)s, %(name)s: %(message)s'))
+    db.addHandler(dbHand)
 
 
 @engine.route("/", methods=["GET"])
 async def getEngine(request: Request):
-    user_agent = request.headers.get('User-Agent')
-    user_agent = user_agent.split(" ")
+    r = redis.Redis(host="localhost", port=5005)
+    user_agent = request.headers.get(b'User-Agent')
+    user_agent = user_agent[0].decode().split(" ")
     db = network.database.database(user_agent[0])
-    get = db.get(user_agent[1])
-    if user_agent[1] == "mod_log" or user_agent[1] == "profanity_filter" or user_agent[1] == "spam_filter" or user_agent[1] == "message_log":
-        get = bool(get)
-        print(get)
-    if type(get) == bool or type(get) == int or type(get) == float:
-        data = responses.Basic(get)
-    else:
-        data = responses.Basic(f"get")
+    get = await db.get(user_agent[1])
+    data = responses.Basic(get)
     return json([data])
 
 
 @engine.route("/", methods=["POST"])
 async def postEngine(request: Request):
-    user_agent = request.headers.get('User-Agent')
-    user_agent = user_agent.split(" ")
-    db = network.database.database(user_agent[0])
-    newter = db.new()
+    user_agent = request.headers.get(b'User-Agent')
+    user_agent[0]: bytes
+    db = network.database.database(user_agent[0].decode())
+    newter = await db.new()
     data = responses.Basic(f'{newter}')
     return json([data])
 
 
 @engine.route("/", methods=["PUT"])
 async def putEngine(request: Request):
-    user_agent = request.headers.get('User-Agent')
-    user_agent = user_agent.split(" ")
+    user_agent = request.headers.get(b'User-Agent')
+    user_agent = user_agent[0].decode().split(" ")
     forleng = 0
     value = ""
     for i in user_agent:
@@ -59,18 +59,22 @@ async def putEngine(request: Request):
             value += i
         forleng += 1
     db = network.database.database(user_agent[0])
-    setter = db.set(user_agent[1], value)
+    if user_agent[1] == "True":
+        user_agent[1] = True
+    elif user_agent[1] == "False":
+        user_agent[1] = False
+    setter = await db.set(user_agent[1], value)
     data = responses.Basic(f"{setter}")
     return json([data])
 
 
 @engine.route("/", methods=["DELETE"])
-def deleteEngine(request: Request):
-    user_agent = request.headers.get('User-Agent')
-    user_agent = user_agent.split(" ")
-    db = network.database.database(user_agent[0])
-    delter = db.delete()
-    data = responses.Basic(f"{delter}")
+async def deleteEngine(request: Request):
+    user_agent = request.headers.get(b'User-Agent')
+    user_agent[0]: bytes
+    db = network.database.database(user_agent[0].decode())
+    delter = await db.delete()
+    data = responses.Basic(delter)
     return json([data])
 
 

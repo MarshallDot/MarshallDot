@@ -85,8 +85,8 @@ class events(commands.Cog):
                                     quer = js[0]["data"]
                     except:
                         return
-                    log = enchant.logg(apid, payload.guild_id, "message_delete", message)
-                    log.new()
+                    log = enchant.logg(apid, payload.guild_id)
+                    log.new("message_delete", message)
                     chan = self.bot.get_channel(int(quer))
                     utc = datetime.utcnow()
                     utc = f'{utc.strftime("%Y-%m-%d")} {utc.strftime("%I:%M:%S")}'
@@ -146,8 +146,8 @@ class events(commands.Cog):
                                     quer = js[0]["data"]
                     except:
                         return
-                    log = enchant.logg(apid, payload.guild_id, "bulk_message_delete", message)
-                    log.new()
+                    log = enchant.logg(apid, payload.guild_id)
+                    log.new("bulk_message_delete", message)
                     chan = self.bot.get_channel(int(quer))
                     utc = datetime.utcnow()
                     utc = f'{utc.strftime("%Y-%m-%d")} {utc.strftime("%I:%M:%S")}'
@@ -227,7 +227,7 @@ class events(commands.Cog):
         for i in enchant.Shell.servers():
             if int(i) == guild.id:
                 headers = {
-                    'User-Agent': f'{guild.id}'
+                    'User-Agent': str(guild.id)
                 }
                 async with aiohttp.ClientSession() as session:
                     async with session.post('http://localhost:6006/', headers=headers) as r:
@@ -253,6 +253,10 @@ class events(commands.Cog):
                             data = js[0]["data"]
                 return
         pass
+
+    @commands.Cog.listener()
+    async def on_socket_raw_send(self, payload):
+        print(payload)
 
     @commands.Cog.listener()
     async def on_message_join(self, member: discord.Member):

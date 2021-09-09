@@ -77,11 +77,11 @@ class Utility(commands.Cog):
                 if r.status == 200:
                     js = await r.json()
                     data = js[0]["data"]
-        prefix = enchant.get_prefix()
         if data:
             await ctx.author.send(
                 file=discord.File(f'../data/{ctx.guild.id}_messages.txt'))
         else:
+            prefix = await self.bot.get_prefix(ctx.message)
             await ctx.reply("```"
                             "Message logging is not enabled for your server.\n"
                             f'If you want to enable message logging for your server: '
